@@ -1,0 +1,123 @@
+
+<head>
+    <meta charset="UTF-8">
+    <title> עדכון הבקשה האישית</title>
+    <style>
+        body {
+            background: #f4f4f4;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            direction: rtl;
+        }
+        .private-input {
+            padding: 150px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: right;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: large;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            color: white; 
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7); 
+            border: none; 
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: medium;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table tr {
+            height: 40px;
+        }
+        table tr:first-child {
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7); 
+            color: white;
+            font-weight: bold;
+        }
+        table tr td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="private-input">
+        <label>שם מלא:</label>
+        <input type="text" placeholder="הכנס את שמך המלא">
+        
+        <label>ת.ז:</label>
+        <input type="number" placeholder="הכנס תעודת זהות (9 ספרות)">
+
+        <label>מחלקה:</label>
+        <input type="text" placeholder="הכנס את המחלקה">
+        
+        <label>שנה:</label>
+        <input type="text" placeholder="הכנס שנה">
+
+        <label>טלפון נייד:</label>
+        <input type="number" placeholder="הכנס מספר טלפון נייד">
+        
+        <label>כתובת מייל:</label>
+        <input type="email" placeholder="הכנס כתובת דואר אלקטרוני">
+        <button>update</button>
+        
+        <label>מערכת שעות:</label>
+        <table>
+            <tr>
+                <td>יום</td>
+                <td>שעה</td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="יום"></td>
+                <td><input type="time" placeholder="שעה"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="יום"></td>
+                <td><input type="time" placeholder="שעה"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="יום"></td>
+                <td><input type="time" placeholder="שעה"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="יום"></td>
+                <td><input type="time" placeholder="שעה"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="יום"></td>
+                <td><input type="time" placeholder="שעה"></td>
+            </tr>
+        </table>
+        
+        <button type="submit">שלח</button>
+    </div>
+</body>
+</html>
+

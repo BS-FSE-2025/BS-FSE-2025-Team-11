@@ -1,92 +1,42 @@
-from django.test import TestCase
-from .models import UserProfile
+from django.test import TestCase, Client
+import json
 
-class UserProfileTests(TestCase):
+class UpdateRequestTest(TestCase):
+    def setUp(self):
+        # יצירת לקוח לבדיקות
+        self.client = Client()
+        self.url = '/update-request/'  # כתובת ה-URL של ה-View
 
-    def test_create_user_profile(self):
-        """Test creating a valid user profile."""
-        profile = UserProfile.objects.create(
-            full_name='Duha Abu Hamid',
-            id_number='123456789',
-            department='Software Engineering',
-            year=2023,
-            mobile_number='0501234567',
-            email='duha@example.com'
-        )
-        self.assertEqual(profile.full_name, 'Duha Abu Hamid')
-        self.assertEqual(profile.id_number, '123456789')
-        self.assertEqual(profile.department, 'Software Engineering')
-        self.assertEqual(profile.year, 2023)
-        self.assertEqual(profile.mobile_number, '0501234567')
-        self.assertEqual(profile.email, 'duha@example.com')
-
-    def test_invalid_email(self):
-        """Test that an exception is raised for invalid email."""
-        with self.assertRaises(ValueError):
-            UserProfile.objects.create(
-                full_name='Duha Abu Hamid',
-                id_number='123456789',
-                department='Software Engineering',
-                year=2023,
-                mobile_number='0501234567',
-                email='invalid-email'  # Invalid email
-            )
-
-    def test_invalid_mobile_number(self):
-        """Test that an exception is raised for invalid mobile numbers."""
-        with self.assertRaises(ValueError):
-            UserProfile.objects.create(
-                full_name='Duha Abu Hamid',
-                id_number='123456789',
-                department='Software Engineering',
-                year=2023,
-                mobile_number='1234567890',  # Invalid mobile number
-                email='duha@example.com'
-            )
-    INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    ]
-
-    def test_valid_submission(self):
-        """Test the submission process with valid data."""
-        response = self.client.post('/submit/', {
-            'full_name': 'Duha Abu Hamid',
+    def test_valid_data(self):
+        # בדיקה עם נתונים תקינים
+        valid_data = {
+            'full_name': 'יוסי כהן',
             'id_number': '123456789',
-            'department': 'Software Engineering',
-            'year': '2023',
-            'mobile_number': '0501234567',
-            'email': 'duha@example.com'
-        })
+            'department': 'מחשבים',
+            'year': '2024',
+            'phone': '0501234567',
+            'email': 'yossi@example.com'
+        }
+        response = self.client.post(self.url, data=json.dumps(valid_data), content_type='application/json')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Full Name: Duha Abu Hamid', response.content)
+        self.assertEqual(response.json().get('message'), 'Request updated successfully')
 
-    def test_invalid_submission_phone(self):
-        """Test the submission process with an invalid phone number."""
-        response = self.client.post('/submit/', {
-            'full_name': 'Duha Abu Hamid',
-            'id_number': '123456789',
-            'department': 'Software Engineering',
-            'year': '2023',
-            'mobile_number': '1234567890',  # Invalid phone number
-            'email': 'duha@example.com'
-        })
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b"Error: Phone number must start with '05' and be 10 digits long.", response.content)
+    def test_missing_required_fields(self):
+        # בדיקה עם נתונים חסרים
+        invalid_data = {
+            'full_name': 'יוסי כהן',
+            # חסר id_number
+            'department': 'מחשבים',
+            'year': '2024',
+            'phone': '0501234567',
+            'email': 'yossi@example.com'
+        }
+        response = self.client.post(self.url, data=json.dumps(invalid_data), content_type='application/json')
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('error', response.json())
 
-    def test_invalid_submission_email(self):
-        """Test the submission process with an invalid email."""
-        response = self.client.post('/submit/', {
-            'full_name': 'Duha Abu Hamid',
-            'id_number': '123456789',
-            'department': 'Software Engineering',
-            'year': '2023',
-            'mobile_number': '0501234567',
-            'email': 'invalid-email'  # Invalid email
-        })
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Error: Invalid email address.', response.content)
+    def test_invalid_method(self):
+        # בדיקה עם שיטה לא חוקית (GET במקום POST)
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 405)
+        self.assertIn('error', response.json())

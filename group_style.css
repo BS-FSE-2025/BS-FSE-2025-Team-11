@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7fafa; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    direction: rtl; /* מגדיר את כיוון הטקסט והצגת השדות מימין לשמאל */
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 700px; /* רוחב מקסימלי */
+    height: 90vh; /* גובה מקסימלי */
+    overflow-y: auto; /* גלילה במקרה של תוכן רב */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 24px;
+    color: #4f5a5a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 80px; /* גובה קבוע לשם הקורסים */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1e88e5; /* צבע כחול כהה לפוקוס */
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+}
+
+button {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1565c0; /* כחול כהה בריחוף */
+}
+
+button:active {
+    transform: scale(0.98); /* אפקט בזמן לחיצה */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center; /* למרכז את הטקסט בתאים */
+    direction: rtl; /* כדי ליישר לימין עבור עברית */
+    font-family: Arial, sans-serif;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+}
+
+td input {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input[type="text"]:nth-child(2) {
+    width: 45%;
+}
+
+.schedule-item {
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+    width: 300px; 
+    height: 60px; 
+    font-size: 20px; 
+    font-weight: bold; 
+    color: white; 
+    background: linear-gradient(135deg, #6cd2ed, #45a7c7); 
+    border: none; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    text-align: center;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+    background: linear-gradient(135deg, #45a7c7, #6cd2ed); 
+}
+
+button[type="submit"]:active {
+    box-shadow: 0 4px #3a8ca6; 
+    transform: translateY(4px);
+}
+
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 15px;
+}

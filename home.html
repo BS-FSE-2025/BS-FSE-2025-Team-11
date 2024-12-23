@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7fafa;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: #4f5a5a;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px; 
+        }
+        button {
+    width: 400px; 
+    height: 70px; 
+    font-size: 20px; 
+    font-weight: bold; 
+    color: white; 
+    background: linear-gradient(135deg, #6cd2ed, #45a7c7); 
+    border: none; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    text-align: center;
+}
+
+button:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+    background: linear-gradient(135deg, #45a7c7, #6cd2ed); 
+}
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to our website</h1>
+    <div class="button-container">
+        <button>Student</button>
+        <button>Teacher</button>
+        <button>Dean of Student office</button>
+    </div>
+</body>
+</html>
+

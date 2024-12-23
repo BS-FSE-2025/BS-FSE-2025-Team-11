@@ -9,13 +9,12 @@
     font-family: Arial, sans-serif;
     padding: 20px 50px;
     height: 100vh;
-    background:rgb(148, 157, 240);
+    background:#f7fafa;
 }
 .First_Log-In-container{
     width: 500px;
     height: 800px;
-    background:rgb(211, 221, 243);
-    color: rgb(240, 225, 207);
+    background:#fff;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
     padding-left: 5%;
@@ -41,11 +40,9 @@
 }
 
 h1{
-    color: black;
-    font-size: 24px;
-    text-shadow: opx opx 2px rgba(37, 34, 233, 0.5);
-    margin-bottom: 60px;
-    font-weight: bold;
+    color:#4f5a5a;
+    font-size: 26px;
+    margin-bottom: 30px;
 
 }
 label{
@@ -67,7 +64,7 @@ input{
 
 }
 button{
-    background: rgb(240, 243, 247);
+    background: linear-gradient(135deg,#6cd2ed,#45a7c7);
     height: 40px;
     line-height: 40px;
     border-radius: 10%50%10%50%/50%10%50%10% px;
@@ -76,5 +73,5 @@ button{
     transition: background-color 0.3s ease;
 }
 .button:hover {
-    background-color: #0056b3; /* اللون عند وضع الفأرة */
+    background-color:linear-gradient(135deg,#45a7c7,#6cd2ed); 
 }

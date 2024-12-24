@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>בקשה לתגבור אישי</title>
+    <link rel="stylesheet" href="p_style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>בקשה לתגבור אישי</h2>
+        <form action="/" method="POST">
+            <label for="full_name">שם מלא:</label>
+            <input type="text" id="full_name" name="full_name" placeholder="הכנס את שמך המלא" required>
+
+            <label for="id_number">ת.ז:</label>
+            <input type="text" id="id_number" name="id_number" placeholder="הכנס תעודת זהות" required>
+
+            <label for="department">מחלקה:</label>
+            <input type="text" id="department" name="department" placeholder="הכנס את המחלקה" required>
+
+            <label for="year">שנה:</label>
+            <select id="year" name="year" required>
+                <option value="" disabled selected>בחר שנה</option>
+                <option value="1">שנה א</option>
+                <option value="2">שנה ב</option>
+                <option value="3">שנה ג</option>
+                <option value="4">שנה ד</option>
+            </select>
+
+            <label for="phone">טלפון נייד:</label>
+            <input type="text" id="phone" name="phone" placeholder="הכנס מספר טלפון נייד" required>
+
+            <label for="email">כתובת מייל:</label>
+            <input type="email" id="email" name="email" placeholder="הכנס כתובת דואר אלקטרוני" required>
+
+            <label for="campus">קמפוס:</label>
+            <select id="campus" name="campus" required>
+                <option value="" disabled selected>בחר קמפוס</option>
+                <option value="ashdod">אשדוד</option>
+                <option value="beersheba">באר שבע</option>
+            </select>
+
+            <label for="courses">שמות הקורסים:</label>
+            <textarea id="courses" name="courses" rows="5" placeholder="מלא את שמות הקורסים המלאים בהם נדרש סיוע לימודי" required></textarea>
+
+            <label>שעות תגבור:</label>
+            <!-- טבלה עבור ימים ושעות -->
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>שעה</th>
+                        <th>יום</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
+                        <td><input type="text" name="days[]" placeholder="יום" required></td>
+                    </tr>
+             
+                    <tr>
+                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
+                        <td><input type="text" name="days[]" placeholder="יום" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
+                        <td><input type="text" name="days[]" placeholder="יום" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
+                        <td><input type="text" name="days[]" placeholder="יום" required></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+
+            <button type="submit">שלח בקשה</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+

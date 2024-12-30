@@ -7,14 +7,14 @@ def login_view(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        # التحقق من صحة بيانات تسجيل الدخول
+# Verify login details
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)  # تسجيل الدخول
-            return redirect('home')  # توجيه المستخدم لصفحة بعد تسجيل الدخول
+            login(request, user)  
+            return redirect('home')  # Redirect user to page after login
         else:
-            messages.error(request, "Invalid username or password")  # رسالة خطأ
-    return render(request, 'login.html')  # عرض نموذج تسجيل الدخول
+            messages.error(request, "Invalid username or password")  # error 
+    return render(request, 'login.html')  
 
 #---------------------------------------------------------------------#
 from django.shortcuts import get_object_or_404
@@ -45,3 +45,21 @@ def update_request(request, request_id):
         return redirect("dean_requests")
     else:
         return redirect("student_requests")
+
+from django.shortcuts import render
+
+# الصفحة الرئيسية
+def home(request):
+    return render(request, 'home.html')
+
+# تسجيل دخول الطالب
+def LogIn_Student(request):
+    return render(request, 'student_login.html')
+
+# تسجيل دخول المعلم
+def LogIN_M(request):
+    return render(request, 'teacher_login.html')
+
+# تسجيل دخول مكتب عمادة شؤون الطلاب
+def LogInDeanStu(request):
+    return render(request, 'LogInDeanStu.html')

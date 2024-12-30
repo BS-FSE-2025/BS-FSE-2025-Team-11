@@ -7,14 +7,14 @@ def login_view(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        # التحقق من صحة بيانات تسجيل الدخول
+# Verify login details
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)  # تسجيل الدخول
-            return redirect('home')  # توجيه المستخدم لصفحة بعد تسجيل الدخول
+            login(request, user)  
+            return redirect('home')  # Redirect user to page after login
         else:
-            messages.error(request, "Invalid username or password")  # رسالة خطأ
-    return render(request, 'login.html')  # عرض نموذج تسجيل الدخول
+            messages.error(request, "Invalid username or password")  # error 
+    return render(request, 'login.html')  
 
 #---------------------------------------------------------------------#
 from django.shortcuts import get_object_or_404

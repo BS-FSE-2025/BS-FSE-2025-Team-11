@@ -10,5 +10,5 @@ urlpatterns =[
     path ('Teacher',views.LogIN_M,name='Teacher')
 ]
 urlpatterns =[
-    path ('Dean of Student office',views.LogIn_D,name='Dean of Student office')
+    path ('Dean of Student office',views.LogInDeanStu,name='Dean of Student office')
 ]

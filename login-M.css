@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: #4f5a5a;
+}
+
+.login-container {
+    background-color: #fff; 
+    color: rgb(19, 18, 18);
+    padding: 80px;
+    height: 450px;
+    border-radius: 10px; 
+    width: 350px;
+    text-align:left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+
+.login-container label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    text-transform:none;
+}
+
+input{
+    background:white;
+    height: 40px;
+    line-height: 2px;
+    border-radius: 10%50%10%50%/50%10%50%10% px;
+    padding: 0px 100px;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(240, 236, 247, 0.5);
+
+}
+
+.button{
+    display: inline-block;
+    width: 105%;
+    height: 45px;
+    font-size: 25px;
+    font-weight: 100;
+    flex-direction: row-reverse;
+    color: white;
+    border: none;
+    background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+    border-radius: 10%50%10%50%/50%10%50%10%px;
+    line-height: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+}
+button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #45a7c7, #6cd2ed);
+}
+
+.label{
+    text-decoration-color: black(197, 195, 195);
+    text-transform:none;
+    transition: 100px;
+}
+.link-container {
+    font-display:initial;
+    justify-content:flex-start;
+    gap: 8px; 
+}
+.link {
+    color: #007BFF;
+    text-decoration: none; 
+    font-size: 14px;
+    font-weight: bold; 
+    transition: color 0.3s ease;
+    margin-left: auto;
+  }
+  
+.link:hover {
+    color: #0056b3; 
+    text-decoration: underline;
+}

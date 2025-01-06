@@ -45,3 +45,21 @@ def update_request(request, request_id):
         return redirect("dean_requests")
     else:
         return redirect("student_requests")
+
+from django.shortcuts import render
+
+# الصفحة الرئيسية
+def home(request):
+    return render(request, 'home.html')
+
+# تسجيل دخول الطالب
+def LogIn_Student(request):
+    return render(request, 'student_login.html')
+
+# تسجيل دخول المعلم
+def LogIN_M(request):
+    return render(request, 'teacher_login.html')
+
+# تسجيل دخول مكتب عمادة شؤون الطلاب
+def LogInDeanStu(request):
+    return render(request, 'LogInDeanStu.html')

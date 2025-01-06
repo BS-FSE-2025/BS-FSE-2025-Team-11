@@ -57,7 +57,7 @@ def LogIn_Student(request):
 
 
 def LogIN_M(request):
-    return render(request, 'C:\HTML\tagburim_project\BS-FSE-2025-Team-11\BS-FSE-2025-Team-11\login_M.html')
+    return render(request, 'login_M.html')
 
 
 def LogInDeanStu(request):

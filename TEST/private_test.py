@@ -1,6 +1,5 @@
 import unittest
 from unittest.mock import patch, MagicMock
-
 from io import StringIO
 import sys
 

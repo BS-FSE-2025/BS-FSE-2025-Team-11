@@ -1,0 +1,77 @@
+
+.body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    height: 90vh;
+    background-color: #94abdb;
+    font-family: Arial, sans-serif;
+    padding: 20px 50px;
+    height: 100vh;
+    background:#f7fafa;
+}
+.First_Log-In-container{
+    width: 500px;
+    height: 800px;
+    background:#fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+    padding-left: 5%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+
+}
+.First_Log-In-container label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    text-transform:capitalize;
+}
+.First_Log-In-container :-ms-input-placeholder {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    text-transform:capitalize;
+}
+
+h1{
+    color:#4f5a5a;
+    font-size: 26px;
+    margin-bottom: 30px;
+
+}
+label{
+    text-transform:none;
+    font-size: 2px;
+    padding-left: 2px;
+    color: rgb(68, 69, 70);
+
+}
+input{
+    background:rgb(241, 246, 252);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10%50%10%50%/50%10%50%10% px;
+    padding: 0px 100px;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(91, 6, 228, 0.5); 
+
+}
+button{
+    background: linear-gradient(135deg,#6cd2ed,#45a7c7);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10%50%10%50%/50%10%50%10% px;
+    padding: 0px 165px;
+    box-shadow: 0px 0px 5px rgb(64, 66, 70);
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color:linear-gradient(135deg,#45a7c7,#6cd2ed); 
+}

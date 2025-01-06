@@ -54,12 +54,14 @@ def home(request):
 
 # تسجيل دخول الطالب
 def LogIn_Student(request):
-    return render(request, 'student_login.html')
+    return render(request, 'login.html')
 
 # تسجيل دخول المعلم
 def LogIN_M(request):
-    return render(request, 'teacher_login.html')
+    return render(request, 'C:\HTML\tagburim_project\BS-FSE-2025-Team-11\BS-FSE-2025-Team-11\login_M.html')
 
 # تسجيل دخول مكتب عمادة شؤون الطلاب
 def LogInDeanStu(request):
     return render(request, 'LogInDeanStu.html')
+
+   

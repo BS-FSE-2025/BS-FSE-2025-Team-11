@@ -48,19 +48,18 @@ def update_request(request, request_id):
 
 from django.shortcuts import render
 
-# الصفحة الرئيسية
+
 def home(request):
     return render(request, 'home.html')
 
-# تسجيل دخول الطالب
 def LogIn_Student(request):
     return render(request, 'login.html')
 
-# تسجيل دخول المعلم
+
 def LogIN_M(request):
     return render(request, 'C:\HTML\tagburim_project\BS-FSE-2025-Team-11\BS-FSE-2025-Team-11\login_M.html')
 
-# تسجيل دخول مكتب عمادة شؤون الطلاب
+
 def LogInDeanStu(request):
     return render(request, 'LogInDeanStu.html')
 

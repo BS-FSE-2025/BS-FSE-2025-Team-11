@@ -48,26 +48,14 @@ def update_request(request, request_id):
 
 from django.shortcuts import render
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 57ed49d72b94555255156f032b168ed9db42f054
 def home(request):
     return render(request, 'home.html')
 
 def LogIn_Student(request):
     return render(request, 'login.html')
-<<<<<<< HEAD
 
 def LogIN_M(request):
     return render(request, 'login_M.html')
-=======
-
-
-def LogIN_M(request):
-    return render(request, 'login_M.html')
-
->>>>>>> 57ed49d72b94555255156f032b168ed9db42f054
 
 def LogInDeanStu(request):
     return render(request, 'LogInDeanStu.html')

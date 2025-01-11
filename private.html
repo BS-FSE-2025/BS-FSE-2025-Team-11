@@ -7,8 +7,27 @@
     <link rel="stylesheet" href="p_style.css">
 </head>
 <body>
+
+    <div class="header">
+        <div class="menu">
+         
+            <ul>
+                <li><button dir="ltr">Log out</button></li>
+                <li><a href="#">צור קשר עם דיקנאט</a></li>
+                <li><a href="#">ביטול בקשה  קבוצתי</a></li>
+                <li><a href="#">ביטול בקשה אישי</a></li>
+                <li><a href="#">סטטוס הבקשה</a></li>
+                <li><a href="group.html">בקשה לתגבור קבוצתי</a></li>
+                <li><a href="#">מערכת</a></li>
+                <li><a href="home.html">Home</a></li>
+             
+            </ul>
+            <img class="logo" src="classy.jpg" alt="Logo">
+        </div>
+    </div>
+
     <div class="container">
-        <h2>בקשה לתגבור אישי</h2>
+        <h1>בקשה לתגבור אישי</h1>
         <form action="/" method="POST">
             <label for="full_name">שם מלא:</label>
             <input type="text" id="full_name" name="full_name" placeholder="הכנס את שמך המלא" required>
@@ -17,7 +36,7 @@
             <input type="text" id="id_number" name="id_number" placeholder="הכנס תעודת זהות" required>
 
             <label for="department">מחלקה:</label>
-            <input type="text" id="department" name="department" placeholder="הכנס את המחלקה" required>
+            <input type="text" id="department" name="department" placeholder="הכנס את שם המחלקה" required>
 
             <label for="year">שנה:</label>
             <select id="year" name="year" required>
@@ -44,39 +63,73 @@
             <label for="courses">שמות הקורסים:</label>
             <textarea id="courses" name="courses" rows="5" placeholder="מלא את שמות הקורסים המלאים בהם נדרש סיוע לימודי" required></textarea>
 
-            <label>שעות תגבור:</label>
+           <h4>שעות התגבור:</h4>
             <!-- טבלה עבור ימים ושעות -->
             <table border="1">
                 <thead>
                     <tr>
-                        <th>שעה</th>
+                        <th>שעת התחלה</th>
+                        <th>שעת סיום</th>
                         <th>יום</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
-                        <td><input type="text" name="days[]" placeholder="יום" required></td>
+                        <td>
+                            <input type="time" name="start_hours[]" required>
+                        </td>
+                        <td>
+                            <input type="time" name="end_hours[]" required>
+                        </td>
+                        <td><select name="days[]" required>
+                            <option value="" disabled selected>בחר יום</option>
+                            <option value="sunday">ראשון</option>
+                            <option value="monday">שני</option>
+                            <option value="tuesday">שלישי</option>
+                            <option value="wednesday">רביעי</option>
+                            <option value="thursday">חמישי</option>
+                        </select></td>
                     </tr>
              
                     <tr>
-                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
-                        <td><input type="text" name="days[]" placeholder="יום" required></td>
+                        <td>
+                            <input type="time" name="start_hours[]" required>
+                        </td>
+                        <td>
+                            <input type="time" name="end_hours[]" required>
+                        </td>
+                        <td><select name="days[]" required>
+                            <option value="" disabled selected>בחר יום</option>
+                            <option value="sunday">ראשון</option>
+                            <option value="monday">שני</option>
+                            <option value="tuesday">שלישי</option>
+                            <option value="wednesday">רביעי</option>
+                            <option value="thursday">חמישי</option>
+                        </select></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
-                        <td><input type="text" name="days[]" placeholder="יום" required></td>
+                        <td>
+                            <input type="time" name="start_hours[]" required>
+                        </td>
+                        <td>
+                            <input type="time" name="end_hours[]" required>
+                        </td>
+                        <td><select name="days[]" required>
+                            <option value="" disabled selected>בחר יום</option>
+                            <option value="sunday">ראשון</option>
+                            <option value="monday">שני</option>
+                            <option value="tuesday">שלישי</option>
+                            <option value="wednesday">רביעי</option>
+                            <option value="thursday">חמישי</option>
+                        </select></td>
                     </tr>
-                    <tr>
-                        <td><input type="text" name="hours[]" placeholder="שעה" required></td>
-                        <td><input type="text" name="days[]" placeholder="יום" required></td>
-                    </tr>
+
                     
                 </tbody>
             </table>
             
 
-            <button type="submit">שלח בקשה</button>
+            <button type="submit" class="submit-button">שלח בקשה</button>
         </form>
     </div>
 </body>

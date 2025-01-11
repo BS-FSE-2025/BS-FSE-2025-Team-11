@@ -8,15 +8,34 @@
 </head>
 
 <body>
+
+    <div class="header">
+        <div class="menu">
+         
+            <ul>
+                <li><button dir="ltr">Log out</button></li>
+                <li><a href="#">צור קשר עם דיקנאט</a></li>
+                <li><a href="#">ביטול בקשה  קבוצתי</a></li>
+                <li><a href="#">ביטול בקשה אישי</a></li>
+                <li><a href="#">סטטוס הבקשה</a></li>
+                <li><a href="private.html">בקשה לתגבור אישי</a></li>
+                <li><a href="#">מערכת</a></li>
+                <li><a href="home.html">Home</a></li>
+             
+            </ul>
+            <img class="logo" src="classy.jpg" alt="Logo">
+        </div>
+    </div>
+
     <div class="container">
-        <h2>בקשה לתגבור קבוצתי</h2>
+        <h1>בקשה לתגבור קבוצתי</h1>
         <form action="/" method="POST">
             <h4>1.</h4>
             <label for="course_name">הקורס המבוקש:</label>
             <input type="text" id="course_name" name="course_name" placeholder="הכנס את  שם הקורס" required>
 
             <label for="course_number">מספר הקורס:</label>
-            <input type="text" id="course_number" name="course_name" placeholder=" הכנס מספר הקורס" required>
+            <input  type="number" id="course_number" name="course_name" placeholder=" הכנס מספר הקורס" required>
 
             <label for="department">מחלקה:</label>
             <input type="text" id="department" name="department" placeholder="הכנס את המחלקה" required>
@@ -50,24 +69,60 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>אפשרות 1</td>
-                        <td><input type="text" name="days[]" ></td>
-                        <td><input type="text" name="hours[]" ></td>
-                        <td><input type="text" name="hours[]" ></td>
+                        <td >אפשרות 1</td >
+                        <td><select name="days[]" required>
+                            <option value="" disabled selected>בחר יום</option>
+                            <option value="sunday">ראשון</option>
+                            <option value="monday">שני</option>
+                            <option value="tuesday">שלישי</option>
+                            <option value="wednesday">רביעי</option>
+                            <option value="thursday">חמישי</option>
+                        </select></td>
+                        <td>
+                            <input type="time" name="start_hours[]" required>
+                        </td>
+                        <td>
+                            <input type="time" name="end_hours[]" required>
+                        </td>
+                   
                     </tr>
                     
                     <tr>
                         <td>אפשרות 2</td>
-                        <td><input type="text" name="days[]" ></td>
-                        <td><input type="text" name="hours[]" ></td>
-                        <td><input type="text" name="hours[]" ></td>
+                        <td><select name="days[]" required>
+                            <option value="" disabled selected>בחר יום</option>
+                            <option value="sunday">ראשון</option>
+                            <option value="monday">שני</option>
+                            <option value="tuesday">שלישי</option>
+                            <option value="wednesday">רביעי</option>
+                            <option value="thursday">חמישי</option>
+                        </select></td>
+                        <td>
+                            <input type="time" name="start_hours[]" required>
+                        </td>
+                        <td>
+                            <input type="time" name="end_hours[]" required>
+                        </td>
+                      
                     </tr>
 
                     <tr>
                         <td>אפשרות 3</td>
-                        <td><input type="text" name="days[]" ></td>
-                        <td><input type="text" name="hours[]" ></td>
-                        <td><input type="text" name="hours[]" ></td>
+                        <td><select name="days[]" required>
+                            <option value="" disabled selected>בחר יום</option>
+                            <option value="sunday">ראשון</option>
+                            <option value="monday">שני</option>
+                            <option value="tuesday">שלישי</option>
+                            <option value="wednesday">רביעי</option>
+                            <option value="thursday">חמישי</option>
+                        </select></td>
+                        <td>
+                            <input type="time" name="start_hours[]" required>
+                        </td>
+                        <td>
+                            <input type="time" name="end_hours[]" required>
+                        </td>
+                     
                     </tr>
                 </tbody>
             </table>
@@ -82,6 +137,10 @@
                         <th>שם הסטודנט</th>
                         <th>חתימה</th>
                         <th>מחלקה</th>
+                        <th>מס'</th>
+                        <th>שם הסטודנט</th>
+                        <th>חתימה</th>
+                        <th>מחלקה</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,15 +149,27 @@
                         <td><input type="text" name="student_name_1" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_1" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_1" placeholder="מחלקה" required></td>
+                        <td>15</td>
+                        <td><input type="text" name="student_name_2" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_2" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_2" placeholder="מחלקה" required></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td><input type="text" name="student_name_2" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_2" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_2" placeholder="מחלקה" required></td>
+                        <td>16</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
                     <tr>
                         <td>3</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
+                        <td>17</td>
                         <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
@@ -108,24 +179,40 @@
                         <td><input type="text" name="student_name_4" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_4" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_4" placeholder="מחלקה" required></td>
+                        <td>18</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td><input type="text" name="student_name_5" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_5" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_5" placeholder="מחלקה" required></td>
+                        <td>19</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td><input type="text" name="student_name_6" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_6" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_6" placeholder="מחלקה" required></td>
+                        <td>20</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td><input type="text" name="student_name_7" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_7" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_7" placeholder="מחלקה" required></td>
+                        <td>21</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
 
                     <tr>
@@ -133,6 +220,10 @@
                         <td><input type="text" name="student_name_8" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_8" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_8" placeholder="מחלקה" required></td>
+                        <td>22</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
 
                     <tr>
@@ -140,6 +231,10 @@
                         <td><input type="text" name="student_name_9" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_9" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_9" placeholder="מחלקה" required></td>
+                        <td>23</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
 
                     <tr>
@@ -147,6 +242,54 @@
                         <td><input type="text" name="student_name_10" placeholder="שם הסטודנט" required></td>
                         <td><input type="text" name="signature_10" placeholder="חתימה" required></td>
                         <td><input type="text" name="department_10" placeholder="מחלקה" required></td>
+                        <td>24</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td><input type="text" name="student_name_1" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_1" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_1" placeholder="מחלקה" required></td>
+                        <td>25</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td><input type="text" name="student_name_1" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_1" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_1" placeholder="מחלקה" required></td>
+                        <td>26</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>13</td>
+                        <td><input type="text" name="student_name_1" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_1" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_1" placeholder="מחלקה" required></td>
+                        <td>27</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
+                    </tr>
+
+                    <tr>
+                        <td>14</td>
+                        <td><input type="text" name="student_name_1" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_1" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_1" placeholder="מחלקה" required></td>
+                        <td>28</td>
+                        <td><input type="text" name="student_name_3" placeholder="שם הסטודנט" required></td>
+                        <td><input type="text" name="signature_3" placeholder="חתימה" required></td>
+                        <td><input type="text" name="department_3" placeholder="מחלקה" required></td>
                     </tr>
                 </tbody>
             </table>
@@ -180,8 +323,7 @@
 
             <label for="email">כתובת מייל:</label>
             <input type="email" id="email" name="email" placeholder="הכנס כתובת דואר אלקטרוני" required>
-
-            <button type="submit">שלח בקשה</button>
+            <button type="submit" class="submit-button">שלח בקשה</button>
         </form>
     </div>
 </body>

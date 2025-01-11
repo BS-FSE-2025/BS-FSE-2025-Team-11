@@ -38,136 +38,24 @@ label {
     font-size: 16px;
     font-weight: bold;
     margin-top: 12px;
-   
     margin-bottom: 15px; /* רווח תחתון */
 }
 
-
 input[type="text"],
 input[type="number"],
-input[type="email"],
-textarea,
-select {
-    width: 60%; /* שונה מ-50% ל-60% */
-    padding: 18px; /* הגדלתי את הגובה */
-    margin-bottom: 30px; /* הגדלתי את הרווח בין השדות */
-    border: 1px solid #ccc;
-    border-radius: 10px; /* שיפרתי את העיגול של השדות */
-    background: #f9f9f9;
-    font-size: 16px; /* הגדלתי את גודל הפונט */
-    margin-top: 8px;
-}
-
-textarea {
-    resize: none;
-    height: 80px; /* גובה קבוע לשם הקורסים */
-}
-
-
-input[type="time"] {
-    width: 60%; /* רוחב השדה */
-    padding: 12px; /* ריפוד פנימי */
-    font-size: 18px; /* גודל פונט גדול יותר */
-    border: 1px solid #ccc; /* גבול מותאם */
-    border-radius: 8px; /* עיגול פינות */
-    background: #f9f9f9; /* צבע רקע */
-    margin-bottom: 20px; /* רווח בין השדות */
-}
-
-input[type="time"]:focus {
-    border-color: #1e88e5; /* צבע כחול כהה לפוקוס */
-    outline: none; /* מסיר את הקו החיצוני ברירת המחדל */
-    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5); /* אפקט צל */
-}
-
-
-
-#students_table {
-    width: 80%; /* רוחב הטבלה */
-    margin: 20px 0 20px auto; /* מיקום בצד ימין עם רווח מעל ומתחת */
-    border-collapse: collapse; /* הסרת גבולות כפולים */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל קל */
-    background-color: #ffffff; /* רקע לבן */
-    border-radius: 10px; /* פינות מעוגלות */
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
-    margin-right: 20px; /* רווח בצד ימין */
-}
-
-
-#students_table th {
-    background-color: #f7fafa; /* צבע רקע כמו צבע הדף */
-    color: #4f5a5a; /* צבע טקסט כמו הכותרת הראשית */
-    padding: 15px;
-    font-size: 16px;
-    text-align: center;
-    font-weight: bold;
-    border: 1px solid #ddd; /* גבול עדין */
-}
-
-
-#students_table td {
-    border: 1px solid #ddd; /* גבול עדין */
-    padding: 12px; /* ריווח פנימי */
-    font-size: 14px;
-    text-align: center;
-    background-color: #ffffff; /* רקע לבן */
-}
-
-#students_table tr:hover {
-    background-color: #f2f2f2; /* אפור בהיר בריחוף */
-    transition: background-color 0.3s ease;
-}
-
-table {
-    width: 60%; /* רוחב הטבלה */
-    margin: 20px 0 20px auto; /* מיקום בצד ימין עם רווח מעל ומתחת */
-    border-collapse: collapse;
-    text-align: center;
-    background-color: #ffffff; /* רקע לבן */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 20px; /* רווח בין הטבלה לשאר התוכן */
-}
-
-
-th,
-td {
-    padding: 15px;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f7fafa; /* צבע רקע כמו צבע הדף */
-    color: #4f5a5a; /* צבע טקסט כמו הכותרת הראשית */
-    font-weight: bold;
-}
-
-/* שדה בחירת יום */
-select {
-    width: 60%; /* רוחב השדה */
-    padding: 18px; /* ריווח פנימי */
-    font-size: 14px; /* גודל פונט */
-    border: 1px solid #ccc;
+input[type="date"] {
+    width: 60%;
+    padding: 18px;
+    margin-bottom: 15px;
+    border: 1px solid #dcdcdc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    direction: rtl; /* מימין לשמאל */
 }
 
-select option:first-child {
-    color: gray; /* צבע לערך ברירת המחדל */
-}
-
-
-
-
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: #1e88e5; /* צבע כחול כהה לפוקוס */
-    outline: none;
+input:focus {
+    border-color: #1e88e5;
     box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+    outline: none;
 }
 
 .submit-button {
@@ -202,18 +90,65 @@ textarea:focus {
 }
 
 
-
-.error {
-    color: red;
-    font-size: 12px;
-    margin-top: 10px;
+table {
+    width: 90%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    word-wrap: break-word; /* לשבור מילים ארוכות */
 }
 
-.success {
-    color: green;
-    font-size: 14px;
-    margin-top: 15px;
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
 }
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6cd2ed, #45a7c7); /* מעבר צבעים לכפתור */
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: none;
+}
+
+
+.instructions {
+    width: 60%; 
+    background-color: #ecf0f1; /* רקע אפור קל להנחיות */
+    border: 1px solid #dcdcdc; /* גבול אפור בהיר */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.instructions h4 {
+    margin-top: 0;
+    color: #34495e;
+}
+
+.instructions ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #2c3e50;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+}
+
 
 
 /* עיצוב התפריט */
@@ -286,10 +221,10 @@ button{
     color: #34495e;
     font-size: 16px;
     font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
   border: none;
-    margin-left: 20px;
+    margin-left: 36px;
     margin-top: 5px;
     transition: all 0.3s ease;
     background-color: #6cd2ed;
@@ -302,15 +237,4 @@ button:hover{
 /* ריווח תוכן מתחת לתפריט */
 .container {
     margin-top: 60px; /* התאמה לפי גובה התפריט */
-}
-
-
-
-h4 {
-    font-size: 20px; /* גודל פונט */
-    font-weight: bold; /* הפונט יהיה מודגש */
-    color: #34495e; /* צבע כחול כהה */
-    padding: 15px; /* ריווח פנימי */
-    margin-bottom: 15px; /* רווח תחתון */
-    margin-top: 20px;
 }

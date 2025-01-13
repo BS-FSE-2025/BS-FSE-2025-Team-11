@@ -18,33 +18,42 @@ def validate_course_data(data):
     # בדיקה אם העדיפות של הקבוצה תקינה
     if data['group_priority'] not in ['frontal', 'zoom']:
         return "יש לבחור עדיפות תקינה עבור הקבוצה"
+    
+    # בדיקות נוספות
+    result = validate_contact_info(data)
+    if result != "הקלט תקין":
+        return result
 
- # בדיקה אם יש יותר מ-7 סטודנטים
+    return "הקלט תקין"
+
+
+def validate_contact_info(data):
+    # בדיקה אם כל השדות עבור איש קשר מטעם הסטודנטים הוזנו בצורה תקינה
+    if 'full_name' not in data or not data['full_name']:
+        return "יש למלא את שם מלא של איש הקשר"
+
+    if 'id_number' not in data or not data['id_number'] or len(data['id_number']) != 9 or not data['id_number'].isdigit():
+        return "תעודת הזהות חייבת להיות 9 ספרות"
+
+    if 'phone' not in data or not data['phone'] or len(data['phone']) != 10 or not data['phone'].isdigit() or not data['phone'].startswith("05"):
+        return "מספר הטלפון חייב להיות 10 ספרות ולתחום ב-05"
+
+    if 'email' not in data or not data['email'] or not re.match(r"[^@]+@[^@]+\.[^@]+", data['email']):
+        return "כתובת המייל אינה תקינה"
+
+    if 'department' not in data or not data['department']:
+        return "יש למלא את המחלקה"
+
+    # אם כל הבדיקות תקינות
+    return "הקלט תקין"
+
+
 def check_students(data):
     if len(data['students']) < 7:
         return "הדרישה היא לפחות 7 סטודנטים"
     else:
         return "הכמות תקינה"
 
-
-    # בדיקה אם כל השדות עבור הימים והשעות הוזנו בצורה תקינה
-    for option in data['times']:
-        day = option['day']
-        start_time = option['start']
-        end_time = option['end']
-
-        # בדיקה אם יום הוזן בצורה תקינה
-        if day not in ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday']:
-            return f"יום {day} לא תקני"
-
-        # בדיקה אם השעות הוזנו בצורה תקינה
-        time_format = re.compile(r"^([01]?[0-9]|2[0-3]):([0-5]?[0-9])$")
-        if not re.match(time_format, start_time):
-            return f"שעת התחלה {start_time} לא תקנית"
-        if not re.match(time_format, end_time):
-            return f"שעת סיום {end_time} לא תקנית"
-
-    return "הקלט תקין"
 
 # דוגמת קלט שנכנס
 data = {
@@ -58,7 +67,11 @@ data = {
         {'day': 'sunday', 'start': '08:00', 'end': '10:00'},
         {'day': 'monday', 'start': '10:00', 'end': '12:00'},
         {'day': 'wednesday', 'start': '14:00', 'end': '16:00'}
-    ]
+    ],
+    'full_name': 'יוסי כהן',
+    'id_number': '123456789',
+    'phone': '0501234567',
+    'email': 'yossi@example.com'
 }
 
 # קריאה לפונקציה

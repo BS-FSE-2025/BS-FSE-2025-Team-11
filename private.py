@@ -1,103 +1,88 @@
-import mysql.connector
-from mysql.connector import Error
+import re
 
-# חיבור לבסיס הנתונים
-def connect_to_db():
-    try:
-        conn = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='Tmara12345@',
-            database='new_project'
-        )
-        if conn.is_connected():
-            print("החיבור לבסיס הנתונים הצליח")
-            return conn
-    except Error as e:
-        print(f"יש שגיאה בחיבור לבסיס הנתונים: {e}")
-        return None
+def validate_full_name(full_name):
+    # בודק אם שם מלא לא ריק
+    if len(full_name) > 0:
+        return True
+    return "Full name cannot be empty."
 
-# שמירת בקשה בטבלה personal_request
-def save_personal_request(conn, full_name, id_number, department, academic_year, phone_number, email, campus, course_names, shifts_hours, preferred_days):
-    try:
-        cursor = conn.cursor()
-        query = '''
-            INSERT INTO personal_request (full_name, id_number, department, academic_year, phone_number, email, campus, course_names, shifts_hours, preferred_days)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        '''
-        cursor.execute(query, (full_name, id_number, department, academic_year, phone_number, email, campus, course_names, shifts_hours, preferred_days))
-        conn.commit()
-        print("הנתונים נשמרו בהצלחה")
-    except Error as e:
-        print(f"יש שגיאה בשמירת הנתונים: {e}")
+def validate_id_number(id_number):
+    # בודק אם מספר הזהות מכיל בדיוק 9 ספרות
+    if id_number.isdigit() and len(id_number) == 9:
+        return True
+    return "ID number must be exactly 9 digits."
 
-# הצגת כל הבקשות שנשמרו
-def select_all_requests(conn):
-    try:
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM personal_request;")
-        rows = cursor.fetchall()
-        print("הבקשות שנשמרו:")
-        for row in rows:
-            print(row)
-    except Error as e:
-        print(f"יש שגיאה בהבאת הנתונים: {e}")
+def validate_department(department):
+    # בודק אם שם המחלקה לא ריק
+    if len(department) > 0:
+        return True
+    return "Department cannot be empty."
 
-# פונקציה לבדוק אם הקלט תקין
-def validate_input(full_name, id_number, phone_number):
-    # בדיקת מספר טלפון (10 ספרות ותחיל ב-05)
-    if len(phone_number) != 10:
-        raise ValueError("מספר הטלפון חייב להיות 10 ספרות")
-    if not phone_number.startswith("05"):
-        raise ValueError("מספר הטלפון חייב להתחיל ב-05")
+def validate_phone(phone_number):
+    # בודק אם מספר הטלפון מכיל בדיוק 10 ספרות ומתחיל ב-05
+    if phone_number.isdigit() and len(phone_number) == 10 and phone_number.startswith("05"):
+        return True
+    return "Phone number must be exactly 10 digits and start with '05'."
 
-    # בדיקת תעודת זהות (9 ספרות בלבד)
-    if len(id_number) != 9 or not id_number.isdigit():
-        raise ValueError("מספר תעודת הזהות חייב להיות 9 ספרות בלבד")
+def validate_email(email):
+    # בודק אם כתובת המייל תקינה
+    email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    if re.match(email_regex, email):
+        return True
+    return "Invalid email format."
+
+def validate_courses(courses):
+    # בודק אם שדות הקורסים לא ריקים
+    if len(courses) > 0:
+        return True
+    return "Courses field cannot be empty."
+
+def validate_time_slots(time_slots):
+    # בודק אם יש לפחות שעת התחלה ושעת סיום
+    if len(time_slots) >= 1:
+        for slot in time_slots:
+            if 'start' not in slot or 'end' not in slot or slot['start'] == '' or slot['end'] == '':
+                return "Each time slot must have a start and end time."
+        return True
+    return "At least one time slot is required."
+
+def validate_signup(data):
+    # בודק את כל השדות ומחזיר את התוצאות
+    validations = {
+        "full_name": validate_full_name(data.get('full_name', '')),
+        "id_number": validate_id_number(data.get('id_number', '')),
+        "department": validate_department(data.get('department', '')),
+        "phone": validate_phone(data.get('phone', '')),
+        "email": validate_email(data.get('email', '')),
+        "courses": validate_courses(data.get('courses', '')),
+        "time_slots": validate_time_slots(data.get('time_slots', []))
+    }
     
-    # בדיקת שם מלא
-    if not full_name.strip():
-        raise ValueError("שם מלא לא יכול להיות ריק")
+    # בודק אם יש בעיות עם אחד מהשדות
+    for field, result in validations.items():
+        if result != True:
+            return {field: result}
     
-    return True
+    return "All fields are valid."
 
-# פונקציה לקבלת הנתונים מהמשתמש
-def get_user_input():
-    full_name = input("שם מלא: ").strip()
-    id_number = input("ת.ז: ").strip()
-    department = input("מחלקה: ").strip()
-    academic_year = input("שנה אקדמית: ").strip()
-    phone_number = input("טלפון נייד: ").strip()
-    email = input("כתובת מייל: ").strip()
-    campus = input("קמפוס: ").strip()
-    course_names = input("שמות קורסים: ").strip()
-    shifts_hours = input("שעות תגבור: ").strip()
-    preferred_days = input("ימים מועדפים: ").strip()
+# דוגמה של נתוני טופס
+form_data = {
+    "full_name": "יוסי כהן",
+    "id_number": "123456789",
+    "department": "מדעי המחשב",
+    "phone": "0501234567",
+    "email": "yossi@example.com",
+    "courses": "מתמטיקה, פיזיקה",
+    "time_slots": [
+        {"start": "10:00", "end": "12:00"},
+        {"start": "13:00", "end": "15:00"}
+    ]
+}
 
-    return full_name, id_number, department, academic_year, phone_number, email, campus, course_names, shifts_hours, preferred_days
+# הפעלת הבדיקה
+validation_result = validate_signup(form_data)
 
-def main():
-    # קבלת קלט מהמשתמש
-    full_name, id_number, department, academic_year, phone_number, email, campus, course_names, shifts_hours, preferred_days = get_user_input()
-
-    # בדיקת תקינות קלט
-    try:
-        validate_input(full_name, id_number, phone_number)
-    except ValueError as e:
-        print(f"שגיאה: {e}")
-        return
-
-    # חיבור לבסיס הנתונים
-    conn = connect_to_db()
-    if conn:
-        # שמירת הנתונים בטבלה
-        save_personal_request(conn, full_name, id_number, department, academic_year, phone_number, email, campus, course_names, shifts_hours, preferred_days)
-
-        # הצגת כל הבקשות שנשמרו
-        select_all_requests(conn)
-
-        # סגירת החיבור לבסיס הנתונים
-        conn.close()
-
-if __name__ == "__main__":
-    main()
+if validation_result == "All fields are valid.":
+    print("Form is valid!")
+else:
+    print("Validation errors:", validation_result)

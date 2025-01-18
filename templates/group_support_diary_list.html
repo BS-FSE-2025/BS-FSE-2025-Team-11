@@ -1,0 +1,22 @@
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group Diaries</title>
+</head>
+<body>
+    <h1>Group Diaries</h1>
+    <form method="POST" action="{% url 'Group Diaries' %}">
+        {% csrf_token %}
+    <ul>
+        {% for diary in diaries %}
+        <li>
+            {{ diary.teacher_name }} - {{ diary.course_name }} ({{ diary.from_date }} - {{ diary.to_date }})
+        </li>
+        {% endfor %}
+    </ul>
+</form>
+</body>
+</html>

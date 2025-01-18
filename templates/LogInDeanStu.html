@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Google Fonts Integration */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f7fafa;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+       
+        /* Login Card Styling */
+        .login-card {
+            background: #ffffff;
+            color: #333333;
+            padding: 50px 60px; /* Increased padding for larger card */
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px; /* Larger width */
+            width: 100%;
+        }
+
+        .login-card h1 {
+            font-size: 32px; /* Larger font size */
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #45a7c7; /* Coordinated with button */
+        }
+
+        .login-card p {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #333333;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333333;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #45a7c7; /* Match button color */
+            outline: none;
+            box-shadow: 0px 0px 5px rgba(69, 167, 199, 0.5);
+        }
+
+        button {
+            width: 300px; 
+            height: 60px; 
+            font-size: 20px; 
+            font-weight: bold; 
+            color: white; 
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7); 
+            border: none; 
+            border-radius: 30px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            text-align: center;
+        }
+        
+        button:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+            background: linear-gradient(135deg, #45a7c7, #6cd2ed); 
+        }
+        
+        
+        button:active {
+            box-shadow: 0 4px #3a8ca6; 
+            transform: translateY(4px);
+        }
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 30px 20px; /* Adjusted for smaller screens */
+            }
+
+            .login-card h1 {
+                font-size: 26px;
+            }
+
+            button {
+                font-size: 16px;
+                height: 50px;
+            }
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="login-card">
+            <h1>Login</h1>
+            <form id="loginForm" method="POST" action="">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" onclick="validateForm(event)">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const usernamePattern = /^[a-zA-Z]+$/; // English letters only
+            const passwordPattern = /^(?=.*[A-Z])(?=.*\d).{6,}$/; // At least one uppercase and one number
+
+            let isValid = true;
+
+            if (!usernamePattern.test(username)) {
+                alert("Username must contain English letters only!");
+                isValid = false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                alert("Password must contain at least one uppercase letter, one number, and be 6 characters long!");
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById("loginForm").submit();
+            }
+        }
+    </script>
+</body>
+</html>

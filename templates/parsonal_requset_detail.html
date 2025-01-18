@@ -1,0 +1,39 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+
+{% block content %}
+    <h1>בקשות של {{ student.full_name }}</h1>
+    
+    <p>ת.ז: {{ student.id_number }}</p>
+    <p>מחלקה: {{ student.department }}</p>
+    <p>שנה: {{ student.year }}</p>
+    <p>טלפון נייד: {{ student.phone_number }}</p>
+    <p>כתובת מייל: {{ student.email }}</p>
+    
+    <h2>בקשות</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>תאריך הגשה</th>
+                <th>הערות</th>
+                <th>פעולות</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in requests %}
+                <tr>
+                    <td>{{ request.submitted_date }}</td>
+                    <td>{{ request.notes }}</td>
+                    <td>
+                        <!-- يمكنك هنا إضافة المزيد من الإجراءات حسب الحاجة -->
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+    </body>
+    </html>

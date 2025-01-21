@@ -284,170 +284,91 @@
 </head>
 <body>
 
-   
-    <div class="header">
-        <div class="menu">
-         
-            <ul>
-                <li><button dir="ltr">Log out</button></li>
-                <li><a href="#">צור קשר עם דיקנאט</a></li>
-                <li><a href="#">ביטול התגבור קבוצתי</a></li>
-                <li><a href="#">ביטול התגבור פרטני</a></li>
-                <li><a href="Gruop_Diary.html">יומן תגבור קבוצתי</a></li>
-                <li><a href="#">כסטודנט</a></li>
-                <li><a href="#">מערכת</a></li>
-                <li><a href="home.html">Home</a></li>
-             
-            </ul>
-            <img class="logo" src="classy.jpg" alt="Logo">
+
+
+        <div class="header">
+            <div class="menu">
+                <ul>
+                    <li><button dir="ltr">Log out</button></li>
+                    <li><a href="#">צור קשר עם דיקנאט</a></li>
+                    <li><a href="#">ביטול התגבור קבוצתי</a></li>
+                    <li><a href="#">ביטול התגבור פרטני</a></li>
+                    <li><a href="Gruop_Diary.html">יומן תגבור קבוצתי</a></li>
+                    <li><a href="#">כסטודנט</a></li>
+                    <li><a href="#">מערכת</a></li>
+                    <li><a href="home.html">Home</a></li>
+                </ul>
+                <img class="logo" src="classy.jpg" alt="Logo">
+            </div>
         </div>
-    </div>
     
-
-    <div class="container">
-        <h1>יומן תגבור - פרטני</h1>
-        <form>
-            <label for="mentor-name">שם המתגבר:</label>
-            <input type="text" id="mentor-name" name="mentor-name" placeholder="הכנס את שמך המלא" required>
-
-            <label for="id-number">מספר זהות:</label>
-            <input type="text" id="id-number" name="id-number"  placeholder="הכנס תעודת זהות" required>
-
-            <label for="department">מחלקה\יחידה:</label>
-            <input type="text" id="department" name="department" placeholder="הכנס את שם המחלקה" required>
-
-            <label for="course-name">שם הקורס:</label>
-            <input type="text" id="course-name" name="course-name" placeholder="הכנס שם הקורס" required>
-
-            <label for="start-date">מתאריך:</label>
-            <input type="date" id="start-date" name="start-date" placeholder="מתאריך"required>
-
-            <label for="end-date">עד תאריך:</label>
-            <input type="date" id="end-date" name="end-date" placeholder="עד תאריך" required>
-
-            <label for="total-hours">סה"כ שעות לביצוע:</label>
-           <input type="number" name="total-hours" placeholder=" סך הכל שעות"  required>
-        </form>
-
-        <div class="instructions">
-            <h4>הנחיות כלליות</h4>
-            <ul>
-                <li>יומן תגבור פרטני וקבוצתי יוגשו בנפרד.</li>
-                <li>יומן תגבור פרטני אחד יכלול את כל הפרטים של הסטודנטים המתוגברים באותו חודש.</li>
-                <li>יומן שיחסרו בו פרטים יוחזר למתגבר, דבר שעלול לעכב את התשלום.</li>
-                <li>על המתגבר להעביר את היומן לדיקנאט הסטודנטים עד ל-2 בכל חודש.</li>
-                <li>יש לשמור אישורי תגבורים עד לאחר קבלת התשלום.</li>
-            </ul>
-        </div>
-
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>תאריך</th>
-                    <th>מספר שעות</th>
-                    <th>נושא התגבור</th>
-                    <th>מחלקה</th>
-                    <th>שם הסטודנט</th>
-                    <th>חתימת הסטודנט</th>
-                    <th>חתימת המתגבר</th>
-                </tr>
-            </thead>
-            <tbody>
-          
-                <tr>
-                    <td><input type="date" name="row-date"  placeholder=" תאריך"  required></td>
-                    <td><input type="number" name="row-hours" placeholder="מספר שעות "  required></td>
-                    <td><input type="text" name="row-subject"  placeholder=" נושא התגבור" required ></td>
-                    <td><input type="text" name="row-department" placeholder="מחלקה"  required></td>
-                    <td><input type="text" name="row-student-name" placeholder=" שם הסטודנט"  required></td>
-                    
-                    <td><input type="text" name="signature_student" placeholder=" חתימת הסטודנט" required></td>
-                    <td><input type="text" name="signature_mentor" placeholder="חתימת המתגבר" required></td>
-                </tr>
-               
-                <tr>
-                    <td><input type="date" name="row-date"  placeholder=" תאריך"  required></td>
-                    <td><input type="number" name="row-hours" placeholder="מספר שעות "  required></td>
-                    <td><input type="text" name="row-subject"  placeholder=" נושא התגבור" required ></td>
-                    <td><input type="text" name="row-department" placeholder="מחלקה"  required></td>
-                    <td><input type="text" name="row-student-name" placeholder=" שם הסטודנט"  required></td>
-                    
-                    <td><input type="text" name="signature_student" placeholder=" חתימת הסטודנט" required></td>
-                    <td><input type="text" name="signature_mentor" placeholder="חתימת המתגבר" required></td>
-                </tr>
-
-                <tr>
-                    <td><input type="date" name="row-date"  placeholder=" תאריך"  required></td>
-                    <td><input type="number" name="row-hours" placeholder="מספר שעות "  required></td>
-                    <td><input type="text" name="row-subject"  placeholder=" נושא התגבור" required ></td>
-                    <td><input type="text" name="row-department" placeholder="מחלקה"  required></td>
-                    <td><input type="text" name="row-student-name" placeholder=" שם הסטודנט"  required></td>
-                    
-                    <td><input type="text" name="signature_student" placeholder=" חתימת הסטודנט" required></td>
-                    <td><input type="text" name="signature_mentor" placeholder="חתימת המתגבר" required></td>
-                </tr>
-
-                <tr>
-                    <td><input type="date" name="row-date"  placeholder=" תאריך"  required></td>
-                    <td><input type="number" name="row-hours" placeholder="מספר שעות "  required></td>
-                    <td><input type="text" name="row-subject"  placeholder=" נושא התגבור" required ></td>
-                    <td><input type="text" name="row-department" placeholder="מחלקה"  required></td>
-                    <td><input type="text" name="row-student-name" placeholder=" שם הסטודנט"  required></td>
-                    
-                    <td><input type="text" name="signature_student" placeholder=" חתימת הסטודנט" required></td>
-                    <td><input type="text" name="signature_mentor" placeholder="חתימת המתגבר" required></td>
-                </tr>
-
-                <tr>
-                    <td><input type="date" name="row-date"  placeholder=" תאריך"  required></td>
-                    <td><input type="number" name="row-hours" placeholder="מספר שעות "  required></td>
-                    <td><input type="text" name="row-subject"  placeholder=" נושא התגבור" required ></td>
-                    <td><input type="text" name="row-department" placeholder="מחלקה"  required></td>
-                    <td><input type="text" name="row-student-name" placeholder=" שם הסטודנט"  required></td>
-                    
-                    <td><input type="text" name="signature_student" placeholder=" חתימת הסטודנט" required></td>
-                    <td><input type="text" name="signature_mentor" placeholder="חתימת המתגבר" required></td>
-                </tr>
-
-                <tr>
-                    <td><input type="date" name="row-date"  placeholder=" תאריך"  required></td>
-                    <td><input type="number" name="row-hours" placeholder="מספר שעות "  required></td>
-                    <td><input type="text" name="row-subject"  placeholder=" נושא התגבור" required ></td>
-                    <td><input type="text" name="row-department" placeholder="מחלקה"  required></td>
-                    <td><input type="text" name="row-student-name" placeholder=" שם הסטודנט"  required></td>
-                    
-                    <td><input type="text" name="signature_student" placeholder=" חתימת הסטודנט" required></td>
-                    <td><input type="text" name="signature_mentor" placeholder="חתימת המתגבר" required></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="6">סה"כ שעות:</td>
-                    <td><input type="number" name="total-hours-summary" placeholder="סך הכל שעות" required></td>
-                </tr>
-            </tfoot>
-            
-        </table>
-
-         <label for="date">תאריך:</label>
-         <input type="date" name="approval-date" required>
-            <label for="approve-name">שם המאשר:</label>
-            <input type="text" id="approve-name" name="approve-name" required>
-            <label for="position">תפקיד:</label>
-            <input type="text" id="position" name="position" required>
-            <label for="total-hours">סה"כ מספר שעות מאושרות לתשלום:</label>
-            <input type="number" name="total-hours"   required>
-            <label for="signature">חתימה:</label>
-            <input type="text" name="signature"  required>
-          
-
+        <div class="container">
+            <h1>יומן תגבור פרטני</h1>
+            <form method="POST" action="{% url 'private_Diary' %}">
+                {% csrf_token %}
+                {{ private_form.as_p }}
+                <div class="instructions">
+                    <h4>הנחיות כלליות</h4>
+                    <ul>
+                        <li>יומן תגבור פרטני וקבוצתי יוגשו בנפרד.</li>
+                        <li>יומן תגבור פרטני אחד יכלול את כל הפרטים של הסטודנטים המתוגברים באותו חודש.</li>
+                        <li>יומן שיחסרו בו פרטים יוחזר למתגבר, דבר שעלול לעכב את התשלום.</li>
+                        <li>על המתגבר להעביר את היומן לדיקנאט הסטודנטים עד ל-2 בכל חודש.</li>
+                        <li>יש לשמור אישורי תגבורים עד לאחר קבלת התשלום.</li>
+                    </ul>
+                </div>
         
-
-            <button type="submit" class="submit-button">שלח יומן</button>
-    </div>
-
-
-</body>
-
-
-</html>
+                <table id="students-table">
+                    <thead>
+                        <tr>
+                            <th>תאריך</th>
+                            <th>מספר שעות</th>
+                            <th>נושא התגבור</th>
+                            <th>מחלקה</th>
+                            <th>שם הסטודנט</th>
+                            <th>חתימת הסטודנט</th>
+                            <th>חתימת המתגבר</th>
+                            <th>מחיקה</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="date" name="student_date[]" placeholder="תאריך" required></td>
+                            <td><input type="number" name="attendance_hours[]" placeholder="מספר שעות" required></td>
+                            <td><input type="text" name="attendance_Topic[]" placeholder="נשוא תגבור" required></td>
+                            <td><input type="text" name="unit[]" placeholder="מחלקה" required></td>
+                            <td><input type="text" name="student_name[]" placeholder="שם הסטודנט" required></td>
+                            <td><input type="text" name="student_signature[]" placeholder="חתימת הסטודנט" required></td>
+                            <td><input type="text" name="teacher_signature[]" placeholder="חתימת המתגבר" required></td>
+                            <td><button type="button" onclick="removeRow(this)">מחק</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" onclick="addRow()">הוסף שורה</button>
+                <button type="submit" class="submit-button">שלח יומן</button>
+            </form>
+        </div>
+        
+        <script>
+            function addRow() {
+                const table = document.getElementById("students-table").getElementsByTagName("tbody")[0];
+                const newRow = table.insertRow();
+                newRow.innerHTML = `
+                    <td><input type="text" name="student_date[]" placeholder="תאריך"></td>
+                    <td><input type="text" name="attendance_hours[]" placeholder="מספר שעות"></td>
+                    <td><input type="text" name="attendance_Topic[]" placeholder="נשוא תגבור"></td>
+                    <td><input type="text" name="unit[]" placeholder="מחלקה"></td>
+                    <td><input type="text" name="student_name[]" placeholder="שם הסטודנט"></td>
+                    <td><input type="text" name="student_signature[]" placeholder="חתימת הסטודנט"></td>
+                    <td><input type="text" name="teacher_signature[]" placeholder="חתימת המתגבר"></td>
+                    <td><button type="button" onclick="removeRow(this)">מחק</button></td>
+                `;
+            }
+        
+            function removeRow(button) {
+                button.closest("tr").remove();
+            }
+        </script>
+        
+    </body>
+    </html>

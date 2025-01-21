@@ -182,8 +182,6 @@
         <h1>בקשה תגבור אישי</h1>
         <form method="post" action="{% url 'private_request' %}">
             {% csrf_token %}
-            {{ form.as_p }}  
-
             {% if messages %}
                 <ul>
                     {% for message in messages %}
@@ -191,7 +189,7 @@
                     {% endfor %}
                 </ul>
             {% endif %}
-
+            {{ private_form.as_p }}
             <label>מערכת שעות:</label>
             <table id="schedule-table">
                 <thead>
@@ -203,8 +201,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="text" name="day[]" placeholder="יום"></td>
-                        <td><input type="time" name="time[]" placeholder="שעה"></td>
+                        <td><input type="text" name="student_day[]" placeholder="יום" required></td>
+                        <td><input type="time" name="attendance_time[]" required></td>
                         <td><button type="button" onclick="removeRow(this)">מחק</button></td>
                     </tr>
                 </tbody>
@@ -213,23 +211,28 @@
             <button type="submit">שלח בקשה</button>
         </form>
     </div>
-
+    
     <script>
         function addRow() {
             const table = document.getElementById('schedule-table').getElementsByTagName('tbody')[0];
             const newRow = table.insertRow();
             newRow.innerHTML = `
-                <td><input type="text" name="day[]" placeholder="יום"></td>
-                <td><input type="time" name="time[]" placeholder="שעה"></td>
+                <td><input type="text" name="student_day[]" placeholder="יום" required></td>
+                <td><input type="time" name="attendance_time[]" required></td>
                 <td><button type="button" onclick="removeRow(this)">מחק</button></td>
             `;
         }
-
+    
         function removeRow(button) {
             const row = button.parentElement.parentElement;
-            row.remove();
+            const tableBody = row.parentElement;
+            if (tableBody.rows.length > 1) {
+                row.remove();
+            } else {
+                alert("לא ניתן למחוק את השורה האחרונה.");
+            }
         }
     </script>
 </body>
-</html>
+
 </html>

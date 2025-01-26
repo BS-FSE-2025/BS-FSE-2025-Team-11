@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+       
+        h1 {
+            margin-bottom: 40px; 
+            font-size: 48px;
+            color: #4f5a5a;
+        }
+
+        a.button-link {
+    display: block; /* يجعل كل زر يظهر في سطر منفصل */
+    width: 300px; /* عرض الزر */
+    height: 70px; /* ارتفاع الزر */
+    font-size: 20px; /* حجم النص داخل الزر */
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+    border-radius: 30px; /* تقليل نصف القطر ليتناسب مع الحجم */
+    text-align: center;
+    line-height: 70px; /* لضبط النص وسط الزر */
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 10px auto; /* مسافة بين الأزرار ومحاذاة وسط الصفحة */
+    transition: all 0.3s ease;
+}
+
+a.button-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #45a7c7, #6cd2ed);
+}
+
+a.button-link:active {
+    box-shadow: 0 4px #3a8ca6;
+    transform: translateY(4px);
+}
+
+    </style>
+</head>
+
+<body>
+    <h1>Student Page</h1>
+    <form method="POST" action="{% url 'Studentpage' %}">
+    {% csrf_token %}
+    <div class="buttons">
+        <a href="{% url 'private_request' %}" class="button-link">בקשה תגבור אישי</a>
+        <a href="{% url 'Group_request' %}" class="button-link">בקשה תגבור קבוצתי</a>                                             
+        {% for private in privates %}
+            {% if forloop.first %}
+                <a href="{% url 'delete_private_request' request_id=private.id %}" class="button-link"> ביטול הבקשה האישית </a>
+            {% endif %}
+        {% endfor %}
+        {% for group_request in group_requests %}
+            {% if forloop.first %}
+            <a href="{% url 'delete_group_request' request_id=group_request.id %}" class="button-link" >ביטול הבקשה הקבוצתי</a>
+            {% endif %}
+        {% endfor %}
+        <a href="" class="button-link">תשובה לבקשה</a>
+        <a href="system_Student.html" class="button-link">מערכת</a>
+        <a href="contactStudent.html" class="button-link">התקשר עם דיקנאט</a>
+    </div> 
+</form>
+
+</body>
+</html>

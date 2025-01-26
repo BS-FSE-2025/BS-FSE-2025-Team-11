@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+       
+        h1 {
+            margin-bottom: 40px; 
+            font-size: 48px;
+            color: #4f5a5a;
+        }
+
+        .buttons {
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px 20px; 
+            justify-content: center; 
+            width: 500px; 
+        }
+
+        .buttons {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px 20px; 
+    justify-content: center; 
+    width: 500px; 
+}
+
+.button {
+    display: inline-block; /* تحويل العنصر إلى كتلة مدمجة */
+    width: 300px; 
+    height: 60px; 
+    line-height: 60px; /* لضبط النص في المنتصف عموديًا */
+    font-size: 20px; 
+    font-weight: bold; 
+    color: white; 
+    background: linear-gradient(135deg, #6cd2ed, #45a7c7); 
+    border: none; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    text-decoration: none; /* إزالة الخط السفلي الافتراضي للرابط */
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+.button:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+    background: linear-gradient(135deg, #45a7c7, #6cd2ed); 
+}
+
+.button:active {
+    box-shadow: 0 4px #3a8ca6; 
+    transform: translateY(4px); 
+}
+
+
+    </style>
+</head>
+<body>
+    <h1> Student Dean Page</h1>
+    <div class="buttons">
+        <a href="dean_requests.html" class="button">בקשות</a>
+        <a href="manage_users.html" class="button">עדכון ומחק פרטים</a>
+        <a href="admin_dashboard.html" class="button"> יומנים </a>
+        <li><a href="home.html"><button dir="ltr">Log out</button></a></li>
+    </div>
+</body>
+</html>

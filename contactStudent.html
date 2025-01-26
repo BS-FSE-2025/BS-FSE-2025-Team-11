@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Dean Office</title>
+    <style>        
+               body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                height: auto;
+                margin: 0;
+                padding: 20px;
+                background-color: #f7fafa;
+            }
+    
+            h1 {
+                font-size: 36px;
+                color: #4f5a5a;
+                margin-bottom: 20px;
+            }
+    
+            p {
+                font-size: 18px;
+                color: #333;
+                margin: 10px 0;
+            }
+    
+            a {
+                color: #45a7c7;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    
+            a:hover {
+                text-decoration: underline;
+            }
+    
+            ::selection {
+                color: black;
+                background: white;
+            }
+    
+            nav {
+                position: fixed;
+                top: 0;
+                background: #f7fafa;
+                width: 100%;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                z-index: 100;
+            }
+    
+            nav.menu {
+                max-width: 1250px;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 12px;
+            }
+    
+            .menu ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                padding-left: 0;
+            }
+    
+            .menu ul li {
+                margin: 0 10px;
+            }
+    
+            .menu ul li a {
+                text-decoration: none;
+                color: #5a5858;
+                font-size: 15px;
+                font-weight: 500;
+                padding: 10px 15px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+    
+            .menu ul li a:hover {
+                background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+                color: black;
+            }
+    
+            button {
+                text-decoration: none;
+                color: #5a5858;
+                font-size: 15px;
+                font-weight: 500;
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin-left: 25px;
+                transition: all 0.3s ease;
+            }
+    
+            button:hover {
+                background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+                color: black;
+            }
+    
+            .menu ul li img {
+                border-radius: 50%;
+                height: 60px;
+                width: 60px;
+                margin-right: 20px;
+            }
+    
+            /* تنسيق النصوص في صفحة الاتصال */
+            .contact-info {
+                margin-top: 80px; /* لترك مساحة أسفل الشريط العلوي */
+                text-align: center;
+            }
+    
+            .contact-info p {
+                font-size: 20px;
+                margin: 10px 0;
+                
+            }
+    
+            .contact-info a {
+                font-size: 20px;
+                color: #45a7c7;
+            }
+        ::selection {
+            color: black;
+            background: white;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: inherit;
+            width: 100%;
+            height: 120px;
+            padding: 3px;
+            background: #f4f4f4;
+            margin: 1px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav.menu {
+            max-width: 1250px;
+            margin: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 8px;
+            flex-direction: row-reverse;
+            margin-left: auto;
+        }
+
+        .menu ul {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu ul li {
+            list-style: none;
+            margin: auto;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #5a5858;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .menu ul li a:hover {
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+            color: black;
+        }
+
+        button {
+            text-decoration: none;
+            color: #5a5858;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 10px;
+            border-radius: 5px;
+            margin-left: 25px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+            color: black;
+        }
+
+        .menu ul li img {
+            border-radius: 50%;
+            height: 100px;
+            width: 150px;
+            margin-right: 20px;
+        }
+
+        /* محتوى صفحة التواصل */
+        body {
+            background: #f4f4f4;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            direction: rtl;
+            margin-top: 120px; /* لضمان أن المحتوى لا يغطي الـ navbar */
+        }
+
+        .contact-form {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 700px;
+            height: min-content;
+            text-align: right;
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-form h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #45a7c7;
+            background-color: #f1faff;
+            outline: none;
+        }
+
+        button {
+            padding: 12px;
+            color: white;
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- نافبار القوائم -->
+    <nav>
+        <div class="menu">
+            <ul>
+                <li><img src="C:\Users\Smart\Downloads\WhatsApp Image 2025-01-24 at 3.41.06 PM.jpeg" alt="logo" ></li>
+                <li><a href="Studentpage.html">Home</a></li>
+                <li><a href="private_request.html">בקשה תגבור אישי</a></li>
+                <li><a href="Group_request.html"> בקשה תגבור קבוצתי </a></li>
+                <li><a href="delete_private_request.html"> ביטול הבקשה האישית </a></li>
+                <li><a href="delete_group_request.html"> ביטול הבקשה הקבוצתי </a></li>
+                <li><a href="system_Student.html"> מערכת </a></li>
+                <li><a href="contactStudent.html"> צור קשר עם דיקנאט</a></li>
+                <li><a href="home.html"><button dir="ltr">Log out</button></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- صفحة التواصل مع الديكانات -->
+        <div class="contact-info">
+            <h1>צור קשר</h1>
+            <p>אימייל: <a href="mailto:example@example.com">example@example.com</a></p>
+            <p>טלפון: <a href="tel:+1234567890">+1234567890</a></p>
+        </div>
+
+</body>
+
+</html>

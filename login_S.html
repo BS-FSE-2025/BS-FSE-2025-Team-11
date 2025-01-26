@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <title>
+         LOG-IN_M
+        </title>
+        <style>
+            body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f7fafa; 
+        font-size: 18px;
+    }
+    
+    .login-container {
+        background: linear-gradient(135deg, #ffffff, #f0f7f7);
+        padding: 50px 40px;
+        border-radius: 25px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        border: 1px solid #e0e8e8; /* מסגרת עדינה */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .login-container:hover {
+        transform: scale(1.02);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .login-container h1 {
+        margin-bottom: 20px;
+        color: #4f5a5a;
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: none;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .login-container label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #555;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+    
+    .login-container input {
+        width: 80%;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #90caf9; /* מסגרת כחול בהיר */
+        border-radius: 8px;
+        background: #f8fcfc;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        margin-right: 50px;
+    }
+    
+    .login-container input::placeholder {
+        color: #aaa;
+    }
+    
+    .login-container input:focus {
+        border-color: #42a5f5; /* כחול כהה יותר */
+        outline: none;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(66, 165, 245, 0.3);
+    }
+    
+    .login-container button {
+        width: 65%;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        background: linear-gradient(135deg, #6cd2ed, #45a7c7); /* מעבר צבעים לכפתור */
+        border: none;
+        border-radius: 25px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: none;
+        margin-right: 30px;
+    }
+    
+    button:hover {
+        transform: translateY(-3px);
+        background: linear-gradient(135deg, #45a7c7, #6cd2ed); /* שינוי כיוון המעבר */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    button:active {
+        transform: translateY(3px);
+        box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .login-container p {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #777;
+    }
+    
+    .login-container .error-message {
+        color: #ff6b6b;
+        font-size: 14px;
+        font-weight: bold;
+        display: none;
+    }
+    
+    .spaced-text {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #4f5a5a;
+        text-align: center;
+    }
+    
+        </style>
+
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+</head>
+<body>
+        
+        <div class="login-container">
+            <h1>Log In</h1>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                 <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+           {%endif%}
+            <form method="POST">
+                {% csrf_token %}
+            <label for="username">User Name</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            
+            <button type="submit" class="button">Log In</button>
+            <p class="error-message">There is an error in username or password</p>
+            <div class="link-container">
+                <p>Don’t have an account? <a href="{% url 'Sign_up' %}" class="link">Sign up</a></p>
+            </div>
+            </form>
+        </div>
+</body>
+</html>

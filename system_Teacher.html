@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שעות</title>
+    <style>
+
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2{
+            color: #333;
+            text-align:end;
+            
+        }
+               
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7); /* מעבר צבעים לכפתור */
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: none;
+        }
+        
+        
+        
+        /* עיצוב התפריט */
+        .header {
+            position: fixed; /* קיבוע לראש העמוד */
+            top: 0;
+            left: 0;
+            width: 100%; /* תופס את כל רוחב המסך */
+            background-color: white; 
+            z-index: 1000; /* שכבה קדמית */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל לתפריט */
+            padding: 10px 0; /* ריווח פנימי אנכי */
+            border-radius: 15px; /* עיגול פינות התפריט */
+            
+        }
+        
+        
+        
+        .menu {
+            display: flex;
+            justify-content: flex-start; /* ממרכז את האפשרויות לצד שמאל */
+            align-items: center; /* יישור אנכי */
+            padding: 0 20px; /* ריווח פנימי אופקי */
+        }
+        
+        .menu img.logo {
+            height: 100px; /* גובה מוגדל של הלוגו */
+            margin-right: 30px; /* ריווח בין הלוגו לשאר התפריט */
+            border-radius: 50%;
+            width: 150px;      
+        }
+        .menu ul li img {
+            border-radius: 50%;
+            height: 100px;
+            width: 150px;
+            margin-right: 20px;
+        }
+        nav.menu {
+            max-width: 1250px;
+            margin: 1px;;
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+            padding: 0 8px;
+            flex-direction: row-reverse; 
+            margin-left: auto;
+        }
+        .menu ul {
+            display: flex;
+            align-items: center;
+        }
+        .menu ul li{
+            list-style: none;
+            margin:auto;
+        }
+        .menu ul li a{
+            text-decoration: none;
+            color: #5a5858;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-left: 90px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+        .menu ul li a:hover{
+            background: linear-gradient(135deg,#6cd2ed,#45a7c7);
+            color: black;
+        }
+        button{
+            text-decoration: none;
+            color: #34495e;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 15px;
+          border: none;
+            margin-left: 36px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+            background-color: #6cd2ed;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #6cd2ed;
+            color: white;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 5px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 5px 10px;
+            color: white;
+            background: #45a7c7;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6cd2ed;
+        }
+
+        .delete-btn {
+            background-color: #f44336; /* لون أحمر */
+        }
+
+        .delete-btn:hover {
+            background-color: #d32f2f; /* لون أحمر أغمق عند التمرير */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu">
+            <ul>
+                <li><a href="Teacherpage.html">Home</a></li>
+                <li><a href="private_Diary.html">יומן תגבור אישי</a></li>
+                <li><a href="Group_Diary.html">יומן תגבור קבוצתי</a></li>
+                <li><a href="Studentpage.html">כסטודנט</a></li>
+                <li><a href="system_Teacher.html">מערכת</a></li>
+                <li><a href="contact_Dean.html">צור קשר עם דיקנאט</a></li>
+                <li><a href="home.html"> <button dir="ltr">Log out</button></a></li>
+                
+            </ul>
+            <img class="logo" src="classy.jpg" alt="Logo">
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <h1>מערכת שעות למורים</h1>
+
+    <h2>בקשות אישיות</h2>
+    <table id="personal-schedule-table">
+        <tr>
+            <th>שם תלמיד</th>
+            <th>מספר ת.ז</th>
+            <th>שם הקורס</th>
+            <th>יום</th>
+            <th>שעה התחלה</th>
+            <th>שעה סיום</th>
+            <th>עדכון</th>
+        </tr>
+        {% for request in personal_requests %}
+        {% for schedule in request.Schedules.all %}
+
+            <tr>
+                <form method="post" action="{% url 'update_time' request.id %}">
+                    {% csrf_token %}
+                    <td><input type="text" name="full_name" value="{{ request.full_name }}"></td>
+                    <td><input type="text" name="id_number" value="{{ request.id_number }}"></td>
+                    <td><input type="text" name="course_name" value="{{ request.course_name }}"></td>
+                    <td><input type="date" name="student_day" value="{{ schedule.student_day }}"></td>
+                    <td><input type="time" name="start_time" value="{{ schedule.start_time }}"></td>
+                    <td><input type="time" name="end_time" value="{{ schedule.end_time }}"></td>
+                    <td><button type="submit">עדכון</button></td>
+                </form>
+            </tr>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+    
+    <h2>בקשות קבוצתיות</h2>
+    <table id="group-schedule-table">
+    
+        <tr>
+            <th>מזהה איש קשר</th>
+            <th>שם הקורס</th>
+            <th>סוג הקבוצה</th>
+            <th>יום</th>
+            <th>שעה התחלה</th>
+            <th>שעה סיום</th>
+            <th>עדכון</th>
+
+        </tr>
+        {% for group in group_requests %}
+        {% for option in group.session_options.all %}
+        <tr>
+                <form method="post" action="{% url 'update_timeG' group.id %}">
+                    {% csrf_token %}
+                    <td><input type="text" name="contact_name" value="{{ group.contact_name }}"></td>
+                    <td><input type="text" name="contact_id" value="{{ group.contact_id }}"></td>
+                    <td><input type="text" name="course_name" value="{{ group.course_name }}"></td>
+                    <td><input type="date" name="day" value="{{ option.day }}"></td>
+                    <td><input type="time" name="start_time" value="{{ option.start_time }}"></td>
+                    <td><input type="time" name="end_time" value="{{ option.end_time }}"></td>
+                    <td><button type="submit">עדכון</button></td>
+                </form>
+            
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+    
+<script>
+    function updateSchedule(scheduleId) {
+        // يمكنك استبدال هذا التنبيه بتوجيه فعلي أو AJAX
+        alert("עדכון בקשה אישית ID: " + scheduleId);
+    }
+
+    function updateGroup(groupId) {
+        // يمكنك استبدال هذا التنبيه بتوجيه فعلي أو AJAX
+        alert("עדכון בקשה קבוצתית ID: " + groupId);
+    }
+</script>
+
+</body>
+</html>

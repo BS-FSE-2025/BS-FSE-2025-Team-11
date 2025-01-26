@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הבקשה נשלחה בהצלחה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,rgb(255, 255, 255),rgb(255, 255, 255));
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        nav.menu {
+            width: 100%;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav.menu .logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        nav.menu ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav.menu ul li {
+            margin: 0 15px;
+        }
+
+        nav.menu ul li a {
+            text-decoration: none;
+            color: #5a5858;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav.menu ul li a:hover {
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+            color: white;
+        }
+
+        nav.menu ul li button {
+            background-color: #6cd2ed;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav.menu ul li button:hover {
+            background-color: #ee626b;
+        }
+
+        .container {
+            text-align: center;
+            background: #f7fafa;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+            margin: 100px auto 0;
+            color: #5a5858;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #45a7c7;
+        }
+
+        .container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #45a7c7;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <div class="menu" >        
+        <ul>
+            <li><img src="C:\Users\PC\Downloads\WhatsApp Image 2025-01-24 at 7.24.28 PM.jpeg" alt="logo" ></li>
+            <li><a href="Studentpage.html">Home</a></li>
+            <li><a href="private_request.html">בקשה תגבור אישי</a></li>
+            <li><a href="Group_request.html"> בקשה תגבור קבוצתי </a></li>
+            <li><a href="system_Student.html"> מערכת </a></li>
+            <li><a href="contactStudent.html"> צור קשר עם דיקנאט</a></li>
+            <li><a href="home.html"><button dir="ltr">Log out</button></a></li>
+        </ul>   
+    </div>
+
+    <!-- رسالة النجاح -->
+    <div class="container">
+        <h1>הבקשה שלך נשלחה בהצלחה</h1>
+        
+    </div>
+</body>
+</html>

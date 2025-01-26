@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            .body{
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content:space-around;
+                height: 90vh;      
+                font-family: Arial, sans-serif;
+                padding: 20px 50px;
+                height: auto;
+                background:#f7fafa; ;
+            }
+            ::selection{
+                color:black;
+                background: white;
+            }
+            nav{
+                position: fixed;
+                background:#f7fafa; 
+                width: 100%;
+                padding: 10px;
+
+            }
+            nav.menu{
+                max-width: 1250px;
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 12px;
+            }
+            .menu ul {
+                display: flex;
+                align-items: center;
+            }
+            .menu ul li{
+                list-style: none;
+                margin: 30px;
+            }
+            .menu ul li a{
+                text-decoration: none;
+                color: #5a5858;
+                font-size: 15px;
+                font-weight: 500;
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin-top: 5px;
+                transition: all 0.3s ease;
+            }
+            .menu ul li a:hover{
+                background: linear-gradient(135deg,#6cd2ed,#45a7c7);
+                color: black;
+            }
+            button{
+                text-decoration: none;
+                color: #5a5858;
+                font-size: 15px;
+                font-weight: 500;
+                padding: 10px 15px;
+                border-radius: 5px;
+                margin-left: 25px;
+                margin-top: 5px;
+                transition: all 0.3s ease;
+            }
+            button:hover{
+                background: linear-gradient(135deg,#6cd2ed,#45a7c7);
+                color: black;
+            }
+
+            .menu ul li img {
+                border-radius: 50%;
+                height: 100px;
+                width: 150px;
+                margin-right: 20px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        
+         <nav>
+            <div class="menu" >        
+                <ul>
+                    <li><button dir="ltr">Log out</button></li>
+                    <li><a href="dean_page.html">Home</a></li>
+                    <li><a href="dean_requests.html"> בקשות </a></li>
+                    <li><a href="admin_dashboard.html"> יומנים </a></li>
+                    <li><a href="manage_users.html">עדכון ומחק פרטים</a></li>
+                    <li><a href="home.html"><button dir="ltr">Log out</button></a></li>
+                </ul> 
+            </div>
+
+         </nav>
+    </body>
+</html>

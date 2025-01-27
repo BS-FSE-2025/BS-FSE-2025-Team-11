@@ -66,8 +66,8 @@
             outline: none;
         }
         
-       
-.submit-button {
+        
+        .submit-button {
     width:350px;
     height: 60px;
     font-size: 30px;
@@ -80,7 +80,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 100px;
-    margin-right: 33%;
+    margin-right: 35%;
 }
 
 .submit-button:hover {
@@ -97,26 +97,53 @@
     transform: translateY(3px);
     box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
 }
-
+     
         
-        
-        table {
-            width: 70%;
-            margin-top: 20px;
-            border-collapse: collapse;
-            word-wrap: break-word; /* לשבור מילים ארוכות */
-        }
-        
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
+            table {
+                width: 60%; 
+                margin: 20px 0 20px auto; /* מיקום בצד ימין עם רווח מעל ומתחת */
+                border-collapse: collapse;
+                text-align: center;
+            }
+            
+            th,
+            td {
+                padding: 15px; /* אחידות בגובה בין כותרות לתוכן */
+                border: 1px solid #ddd;
+            }
+            
+            th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+            
+            input[type="text"] {
+                width: 60%; /* הגדלתי את הרוחב */
+            }
+            
+            input[type="text"]:nth-child(2) {
+                width: 60%; /* הגדלתי את הרוחב */
+            }
+            
+            .schedule-item {
+                margin-bottom: 25px; /* הגדלתי את הרווח בין פריטים */
+            }
+            
+            .submit-button[type="submit"] {
+                margin-top: 25px; /* הגדלתי את הרווח בין הכפתור לשדה */
+            }
+            
+            .error {
+                color: red;
+                font-size: 14px; /* הגדלתי את גודל הפונט */
+                margin-top: 12px;
+            }
+            
+            .success {
+                color: green;
+                font-size: 16px; /* הגדלתי את גודל הפונט */
+                margin-top: 20px;
+            }
         
         
         .login-container button {
@@ -161,102 +188,94 @@
         
         
         
-       
+        /* עיצוב התפריט */
+        .header {
+            position: fixed; /* קיבוע לראש העמוד */
+            top: 0;
+            left: 0;
+            width: 100%; /* תופס את כל רוחב המסך */
+            background-color: white; 
+            z-index: 1000; /* שכבה קדמית */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל לתפריט */
+            padding: 10px 0; /* ריווח פנימי אנכי */
+            border-radius: 15px; /* עיגול פינות התפריט */
+            
+        }
+        
+        
+        
+        .menu {
+            display: flex;
+            justify-content: flex-start; /* ממרכז את האפשרויות לצד שמאל */
+            align-items: center; /* יישור אנכי */
+            padding: 0 20px; /* ריווח פנימי אופקי */
+        }
+        
+        .menu img.logo {
+            height: 100px; /* גובה מוגדל של הלוגו */
+            margin-right: 40px; /* ריווח בין הלוגו לשאר התפריט */
+            border-radius: 50%;
+            width: 150px;
+        
+                
+        }
+        
+        nav.menu {
+            max-width: 1250px;
+            margin: 1px;;
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+            padding: 0 8px;
+            flex-direction: row-reverse; 
+            margin-left: auto;
+        }
+        .menu ul {
+            display: flex;
+            align-items: center;
+        }
+        .menu ul li{
+            list-style: none;
+            margin:auto;
+        }
+        .menu ul li a{
+            text-decoration: none;
+            color: #5a5858;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-left: 120px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+        }
+        .menu ul li a:hover{
+            background: linear-gradient(135deg,#6cd2ed,#45a7c7);
+            color: black;
+        }
+        button{
+            text-decoration: none;
+            color: #34495e;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 15px;
+          border: none;
+            margin-left: 36px;
+            margin-top: 5px;
+            transition: all 0.3s ease;
+            background-color: #6cd2ed;
+        }
+        button:hover{
+            background:  #EE626B;
+           
+        }
+        
         /* ריווח תוכן מתחת לתפריט */
         .container {
             margin-top: 60px; /* התאמה לפי גובה התפריט */
         }
-
-        
-/* עיצוב התפריט */
-.header {
-    position: fixed; /* קיבוע לראש העמוד */
-    top: 0;
-    left: 0;
-    width: 100%; /* תופס את כל רוחב המסך */
-    background-color: white; 
-    z-index: 1000; /* שכבה קדמית */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל לתפריט */
-    padding: 10px 0; /* ריווח פנימי אנכי */
-    border-radius: 15px; /* עיגול פינות התפריט */
-    
-}
-
-
-
-.menu {
-    display: flex;
-    justify-content: flex-start; /* ממרכז את האפשרויות לצד שמאל */
-    align-items: center; /* יישור אנכי */
-    padding: 0 20px; /* ריווח פנימי אופקי */
-}
-
-.menu img.logo {
-    height: 100px; /* גובה מוגדל של הלוגו */
-    margin-right: 45px; /* ריווח בין הלוגו לשאר התפריט */
-    border-radius: 50%;
-    width: 150px;
-
-        
-}
-
-nav.menu {
-    max-width: 1240px;
-    margin: 1px;;
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    padding: 0 8px;
-    flex-direction: row-reverse; 
-    margin-left: auto;
-}
-.menu ul {
-    display: flex;
-    align-items: center;
-}
-.menu ul li{
-    list-style: none;
-    margin:auto;
-}
-.menu ul li a{
-    text-decoration: none;
-    color: #5a5858;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 10px;
-    margin-left: 38px;
-    margin-top: 5px;
-    transition: all 0.3s ease;
-}
-.menu ul li a:hover{
-    background: linear-gradient(135deg,#6cd2ed,#45a7c7);
-    color: black;
-}
-button{
-    text-decoration: none;
-    color: #34495e;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 15px 20px;
-    border-radius: 15px;
-  border: none;
-    margin-left: 36px;
-    margin-top: 5px;
-    transition: all 0.3s ease;
-    background-color: #6cd2ed;
-}
-button:hover{
-    background:  #EE626B;
-   
-}
-
-/* ריווח תוכן מתחת לתפריט */
-.private-input {
-    margin-top: 60px; /* התאמה לפי גובה התפריט */
-}
-
-           /* עיצוב כפתורים להוספה ומחיקה */
+                /* עיצוב כפתורים להוספה ומחיקה */
    .add-row-button,
         .delete-row-button {
             text-decoration: none;
@@ -302,21 +321,21 @@ button:hover{
 
 <body>
     <div class="header">
-        <div class="menu">
+        <div class="menu" >        
             <ul>
-                <li><button dir="ltr">Log out</button></li>
-                <li><a href="#">צור קשר עם דיקנאט</a></li>
-                <li><a href="#">ביטול התגבור קבוצתי</a></li>
-                <li><a href="#">ביטול התגבור פרטני</a></li>
-                <li><a href="private_Diary.html">יומן תגבור פרטני</a></li>
-                <li><a href="#">כסטודנט</a></li>
-                <li><a href="#">מערכת</a></li>
-                <li><a href="home.html">Home</a></li>
-            </ul>
+                <li><a href="home.html"><button dir="ltr">Log out</button></a></li>
+                <li><a href="contD.html"> צור קשר עם דיקנאט</a></li>
+                <li><a href="private_Diary.html"> יומן תגבור אישי</a></li>
+                <li><a href="system_Teacher.html"> מערכת </a></li>
+                <li><a href="Teacherpage.html">Home</a></li>
+
+            </ul>  
             {% load static %}
             <img class="logo" src="{% static 'images/classy.jpg' %}" alt="Logo">
+
         </div>
     </div>
+    
 
     <div class="container">
         <h1>יומן תגבור קבוצתי</h1>
@@ -324,69 +343,67 @@ button:hover{
             {% csrf_token %}
             {{ group_form.as_p }}
             <h2>חתימה ואישור</h2>
-                <div class="instructions">
-                    <h2>הנחיות כלליות</h2>
-                    <p>1. יומן תגבור קבוצתי, יש להגיש בנפרד לכל קבוצת תגבור.</p>
-                    <p>2. על המתגבר להעביר את היומן לדיקנאט הסטודנטים עד ל-2 בכל חודש.</p>
-                    <p>3. יש לשמור אישורי תגבורים עד לאחר קבלת התשלום.</p>
-                    <p>4. יומן שיחסרו בו פרטים יוחזר למתגבר, דבר שעלול לעכב את התשלום.</p>
-                </div>
-
-                <h2>פרטי הסטודנטים המשתתפים בקבוצה</h2>
-                <table id="students-table">
-                    <thead>
-                        <tr>
-                            <th>שם הסטודנט</th>
-                            <th>תאריך</th>
-                            <th>מספר שעות</th>
-                            <th>פעולה</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="text" name="student_name[]" placeholder="שם המשפחה + שם פרטי"></td>
-                            <td><input type="date" name="student_date[]" placeholder="תאריך" ></td>
-                            <td><input type="number" name="student_hours[]" placeholder="מספר שעות"></td>
-                            <td><button type="button" class="delete-row-button" onclick="removeRow(this)">מחק</button></td>
-                        </tr>
-                        <!-- المزيد من الصفوف يمكن إضافتها هنا -->
-                    </tbody>
-                </table>
-                <!-- כפתור הוספת שורה -->
-                <button type="button" class="add-row-button" onclick="addRow()">הוסף שורה</button>
+            <div class="instructions">
+                <h2>הנחיות כלליות</h2>
+                <p>1. יומן תגבור קבוצתי, יש להגיש בנפרד לכל קבוצת תגבור.</p>
+                <p>2. על המתגבר להעביר את היומן לדיקנאט הסטודנטים עד ל-2 בכל חודש.</p>
+                <p>3. יש לשמור אישורי תגבורים עד לאחר קבלת התשלום.</p>
+                <p>4. יומן שיחסרו בו פרטים יוחזר למתגבר, דבר שעלול לעכב את התשלום.</p>
+            </div>
+    
+            <h2>פרטי הסטודנטים המשתתפים בקבוצה</h2>
+            <table id="students-table">
+                <thead>
+                    <tr>
+                        <th>שם הסטודנט</th>
+                        <th>תאריך</th>
+                        <th>מספר שעות</th>
+                        <th>פעולה</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="student_name[]" placeholder="שם המשפחה + שם פרטי"></td>
+                        <td><input type="date" name="student_date[]"></td>
+                        <td><input type="number" name="student_hours[]" placeholder="מספר שעות"></td>
+                        <td><button type="button" class="delete-row-button" onclick="removeRow(this)">מחק</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- כפתור הוספת שורה -->
+            <button type="button" class="add-row-button" onclick="addRow()">הוסף שורה</button>
                 
-                <br><button type="submit" class="submit-button">שלח יומן</button></br>
-
-            </form>
-        </div>
+            <br><button type="submit" class="submit-button">שלח בקשה</button></br>
+        </form>
     </div>
-
+    
     <script>
-         function addRow() {
-        const table = document.getElementById("students-table").getElementsByTagName("tbody")[0];
-        const newRow = table.insertRow();
-        newRow.innerHTML = `
-            <td><input type="text" name="student-name[]" placeholder="שם המשפחה + שם פרטי"></td>
-            <td><input type="date" name="student-date[]"></td>
-            <td><input type="number" name="student-hours[]"></td>
-            <td><button type="button" class="delete-row-button" onclick="removeRow(this)">מחק</button></td>
-        `;
-        
-        // עיצוב כפתור המחיקה
-        const deleteButton = newRow.querySelector('.delete-row-button');
-        deleteButton.style.backgroundColor = '#6cd2ed';  // רקע כחול בהיר
-        deleteButton.style.color = '#34495e';           // טקסט כהה
-        deleteButton.style.border = 'none';             // ביטול גבול
-        deleteButton.style.padding = '15px 20px';        // ריווח פנימי
-        deleteButton.style.borderRadius = '15px';        // פינות מעוגלות
-        deleteButton.style.cursor = 'pointer';          // סמן יד בעת ריחוף
-    }
-                
-                    // פונקציה למחיקת שורה
-                    function removeRow(button) {
-                        button.closest("tr").remove(); // מחיקת השורה שאליה שייך הכפתור
-                    }
-    </script>
+        function addRow() {
+       const table = document.getElementById("students-table").getElementsByTagName("tbody")[0];
+       const newRow = table.insertRow();
+       newRow.innerHTML = `
+           <td><input type="text" name="student-name[]" placeholder="שם המשפחה + שם פרטי"></td>
+           <td><input type="date" name="student-date[]"></td>
+           <td><input type="number" name="student-hours[]"></td>
+           <td><button type="button" class="delete-row-button" onclick="removeRow(this)">מחק</button></td>
+       `;
+       
+       // עיצוב כפתור המחיקה
+       const deleteButton = newRow.querySelector('.delete-row-button');
+       deleteButton.style.backgroundColor = '#6cd2ed';  // רקע כחול בהיר
+       deleteButton.style.color = '#34495e';           // טקסט כהה
+       deleteButton.style.border = 'none';             // ביטול גבול
+       deleteButton.style.padding = '15px 20px';        // ריווח פנימי
+       deleteButton.style.borderRadius = '15px';        // פינות מעוגלות
+       deleteButton.style.cursor = 'pointer';          // סמן יד בעת ריחוף
+   }
+               
+                   // פונקציה למחיקת שורה
+                   function removeRow(button) {
+                       button.closest("tr").remove(); // מחיקת השורה שאליה שייך הכפתור
+                   }
+   </script>
+    
 
 </body>
 </html>

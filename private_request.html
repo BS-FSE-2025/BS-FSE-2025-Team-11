@@ -1,5 +1,4 @@
 
-<meta charset="UTF-8">
 <!DOCTYPE html>
 <html lang="he">
 <head>
@@ -8,46 +7,146 @@
     <title>בקשה לתגבור אישי</title>
     
     <style>
-     body {
-    font-family: 'Arial', sans-serif;
-    background-color: transparent; /* קובע שאין רקע */
-    direction: rtl; /* מגדיר את כיוון הטקסט מימין לשמאל */
-    margin: 0; /* מסיר רווחים ברירת מחדל */
-    height: 100vh; /* גובה הדף יתפוס את כל המסך */
-    display: flex;
-    justify-content: flex-start; /* ממקם את התוכן בצד שמאל */
-    align-items: flex-start; /* ממקם את התוכן בחלק העליון */
+ 
+ body {
+                font-family: 'Arial', sans-serif;
+                background-color: transparent; /* קובע שאין רקע */
+                direction: rtl; /* מגדיר את כיוון הטקסט מימין לשמאל */
+                margin: 0; /* מסיר רווחים ברירת מחדל */
+                height: auto; /* גובה הדף יתפוס את כל המסך */
+                display: flex;
+                justify-content: flex-start; /* ממקם את התוכן בצד שמאל */
+                align-items: flex-start; /* ממקם את התוכן בחלק העליון */
+            }
+            
+            .container {
+                background: white;
+                border-radius: 0; /* לא תהיה עיגול לפינות */
+                box-shadow: none; /* לא יהיה צל */
+                padding: 80px; /* ריפוד פנימי */
+                width: 100%; /* התיבה תתפוס את כל רוחב הדף */
+                height: auto; /* גובה מקסימלי של 100% מהדף */
+                overflow-y: auto; /* גלילה במקרה של תוכן רב */
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start; /* מכניס את התוכן למעלה */
+                position: absolute; /* מוודא שהתוכן יימצא בשטח הכולל של הדף */
+            }
+            
+            
+            h1 {
+                text-align: center;
+                color: #34495e; /* כחול כהה */
+                margin-bottom: 20px;
+                font-size: 28px;
+            }
+            
+            label {
+                display: block;
+                color: #2c3e50; /* טקסט כהה */
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 12px;
+                margin-bottom: 15px; /* רווח תחתון */
+            }
+            
+            input[type="text"],
+            input[type="number"],
+            input[type="date"],
+            input[type="email"] {
+                width: 60%;
+                padding: 18px;
+                margin-bottom: 15px;
+                border: 1px solid #dcdcdc;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+            }
+            
+            input:focus {
+                border-color: #1e88e5;
+                box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+                outline: none;
+            }
+            
+/* שדה בחירת יום */
+select {
+    width: 60%; /* רוחב השדה */
+    padding: 18px; /* ריווח פנימי */
+    font-size: 14px; /* גודל פונט */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    direction: rtl; /* מימין לשמאל */
 }
 
-.private-input {
-    background: white;
-    border-radius: 0; /* לא תהיה עיגול לפינות */
-    box-shadow: none; /* לא יהיה צל */
-    padding: 80px; /* ריפוד פנימי */
-    width: 100%; /* התיבה תתפוס את כל רוחב הדף */
-    height: 100vh; /* גובה מקסימלי של 100% מהדף */
-    overflow-y: auto; /* גלילה במקרה של תוכן רב */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* מכניס את התוכן למעלה */
-    position: absolute; /* מוודא שהתוכן יימצא בשטח הכולל של הדף */
+select option:first-child {
+    color: gray; /* צבע לערך ברירת המחדל */
 }
 
 
-h1 {
-    text-align: center;
-    color: #34495e; /* כחול כהה */
-    margin-bottom: 20px;
-    font-size: 28px;
-}
 
-label {
-    display: block;
-    color: #2c3e50; /* טקסט כהה */
-    margin-bottom: 10px;
-    font-size: 16px;
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1e88e5; /* צבע כחול כהה לפוקוס */
+    outline: none;
+    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
+}
+            
+.submit-button {
+    width:350px;
+    height: 60px;
+    font-size: 30px;
     font-weight: bold;
-    margin-top: 12px;
+    color: white;
+    background: linear-gradient(135deg, #6cd2ed, #45a7c7);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 100px;
+    margin-right: 35%;
+}
+
+.submit-button:hover {
+    background-color: #1e88e5;
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #45a7c7, #6cd2ed); /* שינוי כיוון המעבר */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:active {
+    transform: translateY(3px);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+            
+.schedule-table {
+    width: 80%; 
+    margin: 20px auto; /* מיקום במרכז עם רווח למעלה ולמטה */
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 10px; /* פינות מעוגלות */
+    overflow: hidden; /* למנוע חפיפות */
+}
+
+th,
+td {
+    padding: 16px; /* אחידות בגובה בין כותרות לתוכן */
+    border: 1px solid #ddd;
+    font-size: 16px; /* גודל טקסט אחיד */
+}
+
+th {
+    background-color: #f2f2f2; /* צבע רקע לכותרת */
+    font-weight: bold;
+    font-size: 18px; /* גודל טקסט בכותרות */
 }
 
 input[type="text"],
@@ -55,7 +154,7 @@ input[type="email"],
  input[type="date"],
 textarea,
 select {
-    width: 60%; /* שונה מ-50% ל-60% */
+    width: 80%; 
     padding: 18px; /* הגדלתי את הגובה */
     margin-bottom: 30px; /* הגדלתי את הרווח בין השדות */
     border: 1px solid #ccc;
@@ -72,7 +171,7 @@ textarea {
 
 
 input[type="time"] {
-    width: 60%; /* רוחב השדה */
+    width: 80%; /* רוחב השדה */
     padding: 12px; /* ריפוד פנימי */
     font-size: 18px; /* גודל פונט גדול יותר */
     border: 1px solid #ccc; /* גבול מותאם */
@@ -97,169 +196,213 @@ textarea:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(30, 136, 229, 0.5);
 }
-.submit-button {
-    width:350px;
-    height: 60px;
-    font-size: 30px;
-    font-weight: bold;
+
+.schedule-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* צבע שונה לשורות זוגיות */
+}
+
+.schedule-table tr:hover {
+    background-color: #d9f9ff; /* הדגשה בהובר */
+}
+
+button.add-row {
+    background-color: #007bff; /* כפתור כחול */
     color: white;
-    background: linear-gradient(135deg, #6cd2ed, #45a7c7);
     border: none;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 120px;
-    margin-right: 35%;
+    margin-top: 20px; /* רווח מעל הכפתור */
 }
 
-.submit-button:hover {
-    background-color: #1e88e5;
+button.add-row:hover {
+    background-color: #0056b3; /* צבע כהה יותר בהובר */
 }
 
-.submit-button:hover {
-    transform: translateY(-3px);
-    background: linear-gradient(135deg, #45a7c7, #6cd2ed); /* שינוי כיוון המעבר */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+                .submit-button[type="submit"] {
+                    margin-top: 25px; /* הגדלתי את הרווח בין הכפתור לשדה */
+                }
+                
+                .error {
+                    color: red;
+                    font-size: 14px; /* הגדלתי את גודל הפונט */
+                    margin-top: 12px;
+                }
+                
+                .success {
+                    color: green;
+                    font-size: 16px; /* הגדלתי את גודל הפונט */
+                    margin-top: 20px;
+                }
+            
+            .login-container button {
+                width: 100%;
+                padding: 15px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #ffffff;
+                background: linear-gradient(135deg, #6cd2ed, #45a7c7); /* מעבר צבעים לכפתור */
+                border: none;
+                border-radius: 25px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: none;
+            }
+            
+            
+            .instructions {
+                width: 60%; 
+                background-color: #ecf0f1; /* רקע אפור קל להנחיות */
+                border: 1px solid #dcdcdc; /* גבול אפור בהיר */
+                padding: 15px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            
+            .instructions h4 {
+                margin-top: 0;
+                color: #34495e;
+            }
+            
+            .instructions ul {
+                margin: 0;
+                padding-left: 20px;
+                color: #2c3e50;
+            }
+            
+            .instructions li {
+                margin-bottom: 10px;
+            }
 
-.submit-button:active {
-    transform: translateY(3px);
-    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-
-table {
-    width: 60%; 
-    margin: 20px 0 20px auto; /* מיקום בצד ימין עם רווח מעל ומתחת */
-    border-collapse: collapse;
-    text-align: center;
-}
-
-th,
-td {
-    padding: 15px; /* אחידות בגובה בין כותרות לתוכן */
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-input[type="text"] {
-    width: 60%; /* הגדלתי את הרוחב */
-}
-
-input[type="text"]:nth-child(2) {
-    width: 60%; /* הגדלתי את הרוחב */
-}
-
-.schedule-item {
-    margin-bottom: 25px; /* הגדלתי את הרווח בין פריטים */
-}
-
-.submit-button[type="submit"] {
-    margin-top: 25px; /* הגדלתי את הרווח בין הכפתור לשדה */
-}
-
-.error {
-    color: red;
-    font-size: 14px; /* הגדלתי את גודל הפונט */
-    margin-top: 12px;
-}
-
-.success {
-    color: green;
-    font-size: 16px; /* הגדלתי את גודל הפונט */
-    margin-top: 20px;
-}
-
-
-
-
-/* עיצוב התפריט */
-.header {
-    position: fixed; /* קיבוע לראש העמוד */
-    top: 0;
-    left: 0;
-    width: 100%; /* תופס את כל רוחב המסך */
-    background-color: white; 
-    z-index: 1000; /* שכבה קדמית */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל לתפריט */
-    padding: 10px 0; /* ריווח פנימי אנכי */
-    border-radius: 15px; /* עיגול פינות התפריט */
-    
-}
-
-
-
-.menu {
-    display: flex;
-    justify-content: flex-start; /* ממרכז את האפשרויות לצד שמאל */
-    align-items: center; /* יישור אנכי */
-    padding: 0 20px; /* ריווח פנימי אופקי */
-}
-
-.menu img.logo {
-    height: 100px; /* גובה מוגדל של הלוגו */
-    margin-right: 45px; /* ריווח בין הלוגו לשאר התפריט */
-    border-radius: 50%;
-    width: 150px;
-
-        
-}
-
-nav.menu {
-    max-width: 1250px;
-    margin: 1px;;
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    padding: 0 8px;
-    flex-direction: row-reverse; 
-    margin-left: auto;
-}
-.menu ul {
-    display: flex;
-    align-items: center;
-}
-.menu ul li{
-    list-style: none;
-    margin:auto;
-}
-.menu ul li a{
-    text-decoration: none;
-    color: #5a5858;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-top: 5px;
-    transition: all 0.3s ease;
-}
-.menu ul li a:hover{
-    background: linear-gradient(135deg,#6cd2ed,#45a7c7);
-    color: black;
-}
-button{
+.add-row-button,
+.delete-row-button {
     text-decoration: none;
     color: #34495e;
     font-size: 18px;
     font-weight: 500;
     padding: 15px 20px;
     border-radius: 15px;
-  border: none;
+    border: none;
     margin-left: 36px;
     margin-top: 5px;
     transition: all 0.3s ease;
     background-color: #6cd2ed;
 }
-button:hover{
-    background:  #EE626B;
-   
+
+.add-row-button:hover,
+.delete-row-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #45a7c7, #6cd2ed);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+.add-row-button:active,
+.delete-row-button:active {
+    transform: translateY(3px);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.link-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* עיצוב התפריט */
+.header {
+                position: fixed; /* קיבוע לראש העמוד */
+                top: 0;
+                left: 0;
+                width: 100%; /* תופס את כל רוחב המסך */
+                background-color: white; 
+                z-index: 1000; /* שכבה קדמית */
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* צל לתפריט */
+                padding: 10px 0; /* ריווח פנימי אנכי */
+                border-radius: 15px; /* עיגול פינות התפריט */
+                
+            }
+            
+            
+            
+            .menu {
+                display: flex;
+                justify-content: flex-start; /* ממרכז את האפשרויות לצד שמאל */
+                align-items: center; /* יישור אנכי */
+                padding: 0 20px; /* ריווח פנימי אופקי */
+            }
+            
+            .menu img.logo {
+                height: 100px; /* גובה מוגדל של הלוגו */
+                margin-right: 50px; /* ריווח בין הלוגו לשאר התפריט */
+                border-radius: 50%;
+                width: 150px;      
+            }
+            .menu ul li img {
+                border-radius: 70%;
+                height: 100px;
+                width: 150px;
+                margin-right: 20px;
+            }
+            nav.menu {
+                max-width: 1250px;
+                margin: 1px;;
+                display: flex;
+                align-items: center;
+                justify-content:space-around;
+                padding: 0 8px;
+                flex-direction: row-reverse; 
+                margin-left: auto;
+            }
+            .menu ul {
+                display: flex;
+                align-items: center;
+            }
+            .menu ul li{
+                list-style: none;
+                margin:auto;
+            }
+            .menu ul li a{
+                text-decoration: none;
+                color: #5a5858;
+                font-size: 20px;
+                font-weight: 500;
+                padding: 5px 10px;
+                border-radius: 15px;
+                margin-left: 120px;
+                margin-top: 5px;
+                transition: all 0.3s ease;
+            }
+            .menu ul li a:hover{
+                background: linear-gradient(135deg,#6cd2ed,#45a7c7);
+                color: black;
+            }
+            button{
+                text-decoration: none;
+                color: #34495e;
+                font-size: 20px;
+                font-weight: 500;
+                padding: 15px 20px;
+                border-radius: 15px;
+              border: none;
+                margin-left: 36px;
+                margin-top: 5px;
+                transition: all 0.3s ease;
+                background-color: #6cd2ed;
+            }
+            button:hover{
+                background:  #EE626B;
+               
+            }
+            
+            /* ריווח תוכן מתחת לתפריט */
+            .container {
+                margin-top: 60px; /* התאמה לפי גובה התפריט */
+            }
+
+
 
 /* ריווח תוכן מתחת לתפריט */
 .private-input {
@@ -275,6 +418,30 @@ h4 {
     margin-bottom: 15px; /* רווח תחתון */
     margin-top: 20px;
 }
+
+.link-container {
+    text-align: right;
+    margin: 20px;
+}
+
+.confirmation-label {
+    font-size: 16px;
+    color: #34495e;
+}
+
+.link {
+    color: rgb(36, 168, 177);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+
+
+
       /* עיצוב כפתורים להוספה ומחיקה */
       .add-row-button,
         .delete-row-button {
@@ -297,7 +464,7 @@ h4 {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .delete-row-button {
+ .delete-row-button {
             text-decoration: none;
     color: #34495e;
     font-size: 18px;
@@ -311,42 +478,35 @@ h4 {
     background-color: #6cd2ed;
         }
 
-        .delete-row-button:hover {
-            transform: translateY(-3px);
+.delete-row-button:hover {
+ transform: translateY(-3px);
     background: linear-gradient(135deg, #45a7c7, #6cd2ed); /* שינוי כיוון המעבר */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-    </style>
+
+
+       </style>
 
 </head>
 
 <body>
     <div class="header">
-        <div class="menu">
-         
+        <div class="menu" >        
             <ul>
-                <li><button dir="ltr">Log out</button></li>
-                <li><a href="contact_Dean.html">צור קשר עם דיקנאט</a></li>
-                <li><a href="delete_group_request.html">ביטול בקשה  קבוצתי</a></li>
-                <li><a href="delete_private_request.html">ביטול בקשה אישי</a></li>
-                <li><a href="#">סטטוס הבקשה</a></li>
-                <li><a href="Group_request.html">בקשה לתגבור קבוצתי</a></li>
-                <li><a href="#">מערכת</a></li>
+                <li><a href="home.html"><button dir="ltr">Log out</button></a></li>
+                <li><a href="contactStudent.html"> צור קשר עם דיקנאט</a></li>
+                <li><a href="Group_request.html"> בקשה תגבור קבוצתי </a></li>
+                <li><a href="system_Student.html"> מערכת </a></li>
                 <li><a href="Studentpage.html">Home</a></li>
-             
-            </ul>
+
+            </ul>  
             {% load static %}
             <img class="logo" src="{% static 'images/classy.jpg' %}" alt="Logo">
-            
-            
+
         </div>
     </div>
-     
 
-
-</head>
-<body>
-    <div class="private-input">
+    <div class="container">
         <h1>בקשה תגבור אישי</h1>
         <form method="post" action="{% url 'private_request' %}">
             {% csrf_token %}
@@ -358,40 +518,38 @@ h4 {
                 </ul>
             {% endif %}
             {{ private_form.as_p }}
-          
-
-           
-       
-
-           <h4>שעות התגבור:</h4>
-            <!-- טבלה עבור ימים ושעות -->
-            <table id="schedule-table" border="1">
+            <h4>מערכת שעות:</h4>
+            <table id="schedule-table">
                 <thead>
                     <tr>
-                        <th>שעת התחלה</th>
-                        <th>שעת סיום</th>
                         <th>תאריך</th>
-                        <th>מחיקה</th>
+                        <th>משעה</th>
+                        <th>עד שעה</th>
+                        <th>פעולות</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        
-                        <td><input type="time" name="attendance_time[]" required></td>
-                        <td><input type="time" name="attendance_end_time[]" required></td>
-                        <td><input type="date" name="student_date[]" required></td>
+                        <td><input type="date" name="student_day[]" placeholder="יום" required></td>
+                        <td><input type="time" name="start_time[]" required></td>
+                        <td><input type="time" name="end_time[]" required></td>
                         <td><button type="button" class="delete-row-button" onclick="removeRow(this)">מחק</button></td>
                     </tr>
-             
-
-                    
                 </tbody>
             </table>
-            <!-- כפתור הוספת שורה -->
-            <button type="button" class="add-row-button" onclick="addRow()">הוסף שורה</button>
-                
+             <!-- כפתור הוספת שורה -->
+             <button type="button" class="add-row-button" onclick="addRow()">הוסף שורה</button>
+             <div class="link-container" style="text-align: right; margin: 20px;">
+                <label class="confirmation-label" style="font-size: 16px; color: #333;">
+                    האם אתה רוצה למחוק את הבקשה? 
+                    <a href="{% url 'Studentpage' %}" class="link" style="color: blue; text-decoration: none; margin-right: 10px;">
+                        Student page
+                    </a>
+                </label>
+            </div>
+                            
+           <br><button type="submit" class="submit-button">שלח בקשה</button></br>
 
-            <br><button type="submit" class="submit-button">שלח בקשה</button></br>
             <script>
                 // פונקציה להוספת שורה
                 function addRow() {
@@ -416,11 +574,12 @@ h4 {
                     button.closest("tr").remove(); // מחיקת השורה שאליה שייך הכפתור
                 }
             </script>
-                 
+
         </form>
     </div>
-    
+
    
 </body>
 
 </html>
+
